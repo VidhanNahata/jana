@@ -1,0 +1,58 @@
+{
+  "inputSize": 640,
+  "classes": [
+    {
+      "name": "longitudinal_crack",
+      "label_en": "Road crack (along the road)",
+      "subcategory_id": "ROAD.SURFACE_DAMAGE",
+      "threshold": 0.15,
+      "enabled": true
+    },
+    {
+      "name": "transverse_crack",
+      "label_en": "Road crack (across the road)",
+      "subcategory_id": "ROAD.SURFACE_DAMAGE",
+      "threshold": 0.15,
+      "enabled": true
+    },
+    {
+      "name": "alligator_crack",
+      "label_en": "Alligator cracking",
+      "subcategory_id": "ROAD.SURFACE_DAMAGE",
+      "threshold": 0.25,
+      "enabled": true
+    },
+    {
+      "name": "pothole",
+      "label_en": "Pothole",
+      "subcategory_id": "ROAD.POTHOLE",
+      "threshold": 0.25,
+      "enabled": false
+    }
+  ],
+  "model": "dronefreak/rdd2022-yolov8n (pretrained on RDD2022, AGPL-3.0)",
+  "testMetrics": {
+    "pothole": {
+      "threshold": 0.25,
+      "precision": 0.018,
+      "recall": 0.006,
+      "f1": 0.009,
+      "gt_boxes": 352
+    },
+    "alligator_crack": {
+      "threshold": 0.25,
+      "precision": 0.592,
+      "recall": 0.467,
+      "f1": 0.522,
+      "gt_boxes": 214
+    },
+    "crack": {
+      "threshold": 0.15,
+      "precision": 0.461,
+      "recall": 0.398,
+      "f1": 0.427,
+      "gt_boxes": 324
+    }
+  },
+  "note": "pothole class disabled: F1 0.009 on our India+Czech RDD2022 test split; potholes come from the JanaSutra pothole model (pothole.onnx) instead"
+}

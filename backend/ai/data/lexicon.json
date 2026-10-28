@@ -1,0 +1,1214 @@
+{
+  "lexicon_id": "janasutra-civic-lexicon",
+  "version": "1.2.0",
+  "notes": "Lower-case match terms per subcategory. 'en' = English, 'kn' = Kannada script, 'tl' = Kannada transliterated in Latin script (as typed on phones). Terms are matched as substrings on normalised text (Kannada) or word-prefix regexes (Latin). Hand-compiled; extend from reviewed complaints, never from unreviewed submissions. Assets often used as landmarks (bus stop, park, school) require a defect word; matches inside 'near X' phrases are down-weighted by the matcher. 'suppresses': when the key subcategory matches, the listed generic readings are down-weighted (x0.3).",
+  "subcategories": {
+    "ROAD.POTHOLE": {
+      "en": [
+        "pothole",
+        "pot hole",
+        "pit on road",
+        "crater",
+        "hole in the road",
+        "hole on road",
+        "road hole"
+      ],
+      "kn": [
+        "ಗುಂಡಿ",
+        "ಹೊಂಡ",
+        "ಗುಳಿ"
+      ],
+      "tl": [
+        "gundi",
+        "guli",
+        "rasthe gundi",
+        "raste gundi",
+        "road gundi"
+      ]
+    },
+    "ROAD.SURFACE_DAMAGE": {
+      "en": [
+        "damaged road",
+        "broken road",
+        "road damage",
+        "road crack",
+        "cracked road",
+        "road is broken",
+        "dug up road",
+        "road dug",
+        "bad road",
+        "asphalt",
+        "tarring",
+        "uneven road"
+      ],
+      "kn": [
+        "ರಸ್ತೆ ಹಾಳಾಗಿದೆ",
+        "ಹಾಳಾದ ರಸ್ತೆ",
+        "ರಸ್ತೆ ಬಿರುಕು",
+        "ರಸ್ತೆ ಕಿತ್ತುಹೋಗಿದೆ",
+        "ಡಾಂಬರು"
+      ],
+      "tl": [
+        "rasthe haalagide",
+        "raste halagide",
+        "road haalagide",
+        "road halagide",
+        "rasthe kittu",
+        "dambaru"
+      ]
+    },
+    "ROAD.FOOTPATH_DAMAGE": {
+      "en": [
+        "footpath broken",
+        "broken footpath",
+        "damaged footpath",
+        "pavement broken",
+        "broken pavement",
+        "footpath slab",
+        "paver block",
+        "sidewalk broken",
+        "broken sidewalk"
+      ],
+      "kn": [
+        "ಪಾದಚಾರಿ ಮಾರ್ಗ ಹಾಳ",
+        "ಫುಟ್‌ಪಾತ್ ಹಾಳ",
+        "ಫುಟ್ಪಾತ್"
+      ],
+      "tl": [
+        "footpath haalagide",
+        "footpath halagide",
+        "footpath kittu"
+      ]
+    },
+    "ROAD.KERB_DAMAGE": {
+      "en": [
+        "kerb",
+        "curb",
+        "median broken",
+        "divider broken"
+      ],
+      "kn": [
+        "ಮಧ್ಯವಿಭಜಕ"
+      ],
+      "tl": []
+    },
+    "DRAIN.BLOCKED": {
+      "en": [
+        "blocked drain",
+        "drain blocked",
+        "drain clogged",
+        "clogged drain",
+        "choked drain",
+        "drain choked",
+        "drain is blocked",
+        "silt in drain"
+      ],
+      "kn": [
+        "ಚರಂಡಿ ಕಟ್ಟಿಕೊಂಡಿದೆ",
+        "ಚರಂಡಿ ಬ್ಲಾಕ್",
+        "ಚರಂಡಿ ಕಟ್ಟಿ"
+      ],
+      "tl": [
+        "charandi block",
+        "charandi kattide",
+        "charandi kattikondide",
+        "drain block"
+      ]
+    },
+    "DRAIN.OVERFLOW": {
+      "en": [
+        "drain overflow",
+        "overflowing drain",
+        "drain overflowing",
+        "drain water on road",
+        "gutter overflow"
+      ],
+      "kn": [
+        "ಚರಂಡಿ ಉಕ್ಕಿ",
+        "ಚರಂಡಿ ನೀರು ರಸ್ತೆ",
+        "ಚರಂಡಿ ತುಂಬಿ",
+        "ಚರಂಡಿ ನೀರು ಹರಿ"
+      ],
+      "tl": [
+        "charandi ukki",
+        "charandi neeru road",
+        "charandi tumbi"
+      ]
+    },
+    "DRAIN.SEWAGE_LEAK": {
+      "en": [
+        "sewage",
+        "sewer",
+        "sewerage",
+        "ugd",
+        "underground drainage",
+        "septic",
+        "foul smell water",
+        "drainage water leaking",
+        "black water",
+        "sewage water",
+        "sewage leak",
+        "sewage overflow",
+        "sewer overflow",
+        "sewage on the road"
+      ],
+      "kn": [
+        "ಒಳಚರಂಡಿ",
+        "ಮಲಿನ ನೀರು",
+        "ಕೊಳಚೆ ನೀರು"
+      ],
+      "tl": [
+        "olacharandi",
+        "kolache neeru",
+        "malina neeru"
+      ]
+    },
+    "DRAIN.OPEN_MANHOLE": {
+      "en": [
+        "open manhole",
+        "manhole open",
+        "manhole cover",
+        "manhole without cover",
+        "broken manhole",
+        "manhole"
+      ],
+      "kn": [
+        "ಮ್ಯಾನ್‌ಹೋಲ್",
+        "ಮ್ಯಾನ್ಹೋಲ್",
+        "ಮ್ಯಾನ್ ಹೋಲ್"
+      ],
+      "tl": [
+        "manhole muchchilla",
+        "manhole open ide"
+      ]
+    },
+    "WATER.PIPE_LEAK": {
+      "en": [
+        "water leak",
+        "pipe leak",
+        "leaking pipe",
+        "pipe burst",
+        "burst pipe",
+        "water pipe broken",
+        "water wastage",
+        "water leaking",
+        "pipeline leak",
+        "valve leak"
+      ],
+      "kn": [
+        "ನೀರು ಸೋರಿಕೆ",
+        "ಪೈಪ್ ಸೋರಿಕೆ",
+        "ಪೈಪ್ ಒಡೆದು",
+        "ನೀರು ಪೋಲು",
+        "ನೀರು ಸೋರುತ್ತಿದೆ"
+      ],
+      "tl": [
+        "neeru sorike",
+        "pipe sorike",
+        "neeru soruttide",
+        "pipe odedide",
+        "neeru polu",
+        "neer sorike"
+      ]
+    },
+    "WATER.TAP_DAMAGE": {
+      "en": [
+        "public tap",
+        "tap broken",
+        "broken tap",
+        "standpost",
+        "tap running"
+      ],
+      "kn": [
+        "ನಲ್ಲಿ ಹಾಳ",
+        "ಸಾರ್ವಜನಿಕ ನಲ್ಲಿ",
+        "ನಲ್ಲಿ"
+      ],
+      "tl": [
+        "nalli haalagide",
+        "nalli halagide",
+        "public nalli"
+      ]
+    },
+    "WATER.SUPPLY_INFRA_DAMAGE": {
+      "en": [
+        "water tank broken",
+        "overhead tank",
+        "valve chamber",
+        "water supply line damaged"
+      ],
+      "kn": [
+        "ನೀರಿನ ಟ್ಯಾಂಕ್",
+        "ನೀರಿನ ತೊಟ್ಟಿ"
+      ],
+      "tl": [
+        "neerina tank"
+      ]
+    },
+    "WASTE.OVERFLOWING_BIN": {
+      "en": [
+        "overflowing bin",
+        "dustbin full",
+        "bin overflowing",
+        "garbage bin",
+        "dustbin overflow"
+      ],
+      "kn": [
+        "ಕಸದ ತೊಟ್ಟಿ",
+        "ಕಸದ ಡಬ್ಬಿ"
+      ],
+      "tl": [
+        "kasada thotti",
+        "kasada dabbi",
+        "dustbin thumbide"
+      ]
+    },
+    "WASTE.UNCOLLECTED": {
+      "en": [
+        "garbage",
+        "trash",
+        "waste not collected",
+        "garbage not collected",
+        "rubbish",
+        "litter",
+        "waste pile",
+        "garbage heap",
+        "not cleared",
+        "uncollected"
+      ],
+      "kn": [
+        "ಕಸ",
+        "ತ್ಯಾಜ್ಯ",
+        "ಕಸ ವಿಲೇವಾರಿ",
+        "ಕಸ ತೆಗೆದಿಲ್ಲ"
+      ],
+      "tl": [
+        "kasa",
+        "kasa tegedilla",
+        "kasa thegedilla",
+        "kasa bidtare",
+        "tyajya"
+      ]
+    },
+    "WASTE.DUMPING": {
+      "en": [
+        "dumping",
+        "dumped",
+        "debris dumped",
+        "construction waste",
+        "illegal dumping",
+        "black spot"
+      ],
+      "kn": [
+        "ಕಸ ಸುರಿಯುತ್ತಿದ್ದಾರೆ",
+        "ಕಟ್ಟಡ ತ್ಯಾಜ್ಯ"
+      ],
+      "tl": [
+        "kasa suriyuttare",
+        "debris haakidare"
+      ]
+    },
+    "LIGHT.STREETLIGHT_OUT": {
+      "en": [
+        "streetlight",
+        "street light",
+        "street lamp",
+        "light not working",
+        "lights not working",
+        "no light on road",
+        "dark road",
+        "lamp post"
+      ],
+      "kn": [
+        "ಬೀದಿದೀಪ",
+        "ಬೀದಿ ದೀಪ",
+        "ಲೈಟ್ ಉರಿಯುತ್ತಿಲ್ಲ",
+        "ದೀಪ ಉರಿಯುತ್ತಿಲ್ಲ"
+      ],
+      "tl": [
+        "beedi deepa",
+        "beedideepa",
+        "street light barta illa",
+        "light urithilla",
+        "light uriyuttilla",
+        "deepa illa",
+        "light illa"
+      ]
+    },
+    "LIGHT.POLE_DAMAGE": {
+      "en": [
+        "pole fallen",
+        "pole leaning",
+        "leaning pole",
+        "electric pole broken",
+        "pole broken",
+        "bent pole",
+        "damaged pole"
+      ],
+      "kn": [
+        "ಕಂಬ ಬಿದ್ದಿದೆ",
+        "ವಿದ್ಯುತ್ ಕಂಬ",
+        "ಕಂಬ ಬಾಗಿದೆ"
+      ],
+      "tl": [
+        "kamba biddide",
+        "current kamba",
+        "vidyut kamba",
+        "kamba baagide"
+      ]
+    },
+    "LIGHT.EXPOSED_WIRING": {
+      "en": [
+        "hanging wire",
+        "exposed wire",
+        "live wire",
+        "wires hanging",
+        "electric wire",
+        "snapped wire",
+        "open junction box",
+        "electric shock"
+      ],
+      "kn": [
+        "ತಂತಿ ನೇತಾಡುತ್ತಿದೆ",
+        "ವಿದ್ಯುತ್ ತಂತಿ",
+        "ಕರೆಂಟ್ ತಂತಿ"
+      ],
+      "tl": [
+        "current wire",
+        "wire netaduttide",
+        "wire bittide",
+        "tanti"
+      ]
+    },
+    "LIGHT.TRANSFORMER_ISSUE": {
+      "en": [
+        "transformer",
+        "sparking",
+        "spark",
+        "short circuit",
+        "distribution box"
+      ],
+      "kn": [
+        "ಟ್ರಾನ್ಸ್‌ಫಾರ್ಮರ್",
+        "ಟಿಸಿ ಸ್ಫೋಟ",
+        "ಕಿಡಿ"
+      ],
+      "tl": [
+        "transformer spark",
+        "tc burst"
+      ]
+    },
+    "TRANSPORT.SIGN_DAMAGE": {
+      "en": [
+        "sign board",
+        "signboard",
+        "road sign",
+        "name board",
+        "sign fallen",
+        "sign damaged"
+      ],
+      "kn": [
+        "ಫಲಕ",
+        "ನಾಮಫಲಕ",
+        "ಸೂಚನಾ ಫಲಕ"
+      ],
+      "tl": [
+        "phalaka",
+        "board biddide"
+      ]
+    },
+    "TRANSPORT.BUS_SHELTER": {
+      "en": [
+        "bus shelter broken",
+        "bus shelter damaged",
+        "broken bus shelter",
+        "damaged bus shelter",
+        "bus stop broken",
+        "bus stop damaged",
+        "bus shelter roof",
+        "bus stand roof",
+        "bus shelter collapsed",
+        "bus stop shelter"
+      ],
+      "kn": [
+        "ಬಸ್ ನಿಲ್ದಾಣ ಹಾಳ",
+        "ಬಸ್ ತಂಗುದಾಣ ಹಾಳ",
+        "ಬಸ್ ತಂಗುದಾಣ ಮುರಿದ",
+        "ಬಸ್ ನಿಲ್ದಾಣದ ಛಾವಣಿ"
+      ],
+      "tl": [
+        "bus stop haalagide",
+        "bus stop halagide",
+        "bus tangudana haalagide"
+      ]
+    },
+    "TRANSPORT.CROSSING": {
+      "en": [
+        "zebra crossing",
+        "pedestrian crossing",
+        "crossing faded",
+        "no zebra"
+      ],
+      "kn": [
+        "ಜೀಬ್ರಾ ಕ್ರಾಸಿಂಗ್",
+        "ಪಾದಚಾರಿ ದಾಟು"
+      ],
+      "tl": [
+        "zebra illa"
+      ]
+    },
+    "TRANSPORT.BARRIER_DAMAGE": {
+      "en": [
+        "guardrail",
+        "crash barrier",
+        "barrier broken",
+        "railing on divider"
+      ],
+      "kn": [
+        "ತಡೆಗೋಡೆ ಮುರಿದ"
+      ],
+      "tl": []
+    },
+    "TRANSPORT.SIGNAL_FAULT": {
+      "en": [
+        "traffic signal",
+        "signal not working",
+        "traffic light",
+        "signal off",
+        "signal light",
+        "signals are off",
+        "signal off",
+        "signal not functioning",
+        "signal is off"
+      ],
+      "kn": [
+        "ಸಿಗ್ನಲ್",
+        "ಸಂಚಾರ ದೀಪ",
+        "ಸಿಗ್ನಲ್"
+      ],
+      "tl": [
+        "signal barta illa",
+        "signal kelsa madtilla"
+      ]
+    },
+    "PARK.BENCH_DAMAGE": {
+      "en": [
+        "bench broken",
+        "broken bench",
+        "park bench"
+      ],
+      "kn": [
+        "ಬೆಂಚು",
+        "ಬೆಂಚ್"
+      ],
+      "tl": [
+        "bench murididde",
+        "bench haalagide"
+      ]
+    },
+    "PARK.PLAYGROUND": {
+      "en": [
+        "playground",
+        "swing broken",
+        "slide broken",
+        "play equipment",
+        "children park",
+        "swing",
+        "see saw",
+        "seesaw",
+        "children's park",
+        "play area"
+      ],
+      "kn": [
+        "ಆಟದ ಮೈದಾನ",
+        "ಉಯ್ಯಾಲೆ",
+        "ಜಾರುಬಂಡಿ"
+      ],
+      "tl": [
+        "uyyale",
+        "jaarubandi",
+        "aatada maidana"
+      ]
+    },
+    "PARK.PUBLIC_TOILET": {
+      "en": [
+        "public toilet",
+        "toilet not clean",
+        "toilet broken",
+        "toilet locked",
+        "urinal",
+        "washroom",
+        "restroom",
+        "toilet"
+      ],
+      "kn": [
+        "ಶೌಚಾಲಯ",
+        "ಸಾರ್ವಜನಿಕ ಶೌಚಾಲಯ"
+      ],
+      "tl": [
+        "shouchalaya",
+        "souchalaya",
+        "toilet gabbu"
+      ]
+    },
+    "PARK.WALKWAY": {
+      "en": [
+        "park walkway",
+        "walking path broken",
+        "walking track",
+        "jogging track",
+        "park path"
+      ],
+      "kn": [
+        "ನಡಿಗೆ ಪಥ",
+        "ಉದ್ಯಾನದ ದಾರಿ ಹಾಳ"
+      ],
+      "tl": [
+        "park haalagide",
+        "park halagide"
+      ]
+    },
+    "TREE.FALLEN": {
+      "en": [
+        "tree fell",
+        "tree fallen",
+        "fallen tree",
+        "uprooted tree",
+        "tree collapsed",
+        "tree has fallen"
+      ],
+      "kn": [
+        "ಮರ ಬಿದ್ದಿದೆ",
+        "ಮರ ಉರುಳಿ",
+        "ಬಿದ್ದ ಮರ"
+      ],
+      "tl": [
+        "mara biddide",
+        "mara biddu",
+        "mara urulide"
+      ]
+    },
+    "TREE.DANGEROUS_BRANCH": {
+      "en": [
+        "branch hanging",
+        "dangerous branch",
+        "branch broken",
+        "tree branch",
+        "tree trimming",
+        "branch on wire"
+      ],
+      "kn": [
+        "ಕೊಂಬೆ",
+        "ರೆಂಬೆ"
+      ],
+      "tl": [
+        "kombe",
+        "rembe",
+        "kombe neta"
+      ]
+    },
+    "TREE.OBSTRUCTION": {
+      "en": [
+        "blocking the road",
+        "road blocked",
+        "obstruction",
+        "blocked by debris"
+      ],
+      "kn": [
+        "ಅಡ್ಡಿ",
+        "ರಸ್ತೆ ಬಂದ್"
+      ],
+      "tl": [
+        "road block aagide",
+        "addi"
+      ]
+    },
+    "BUILDING.STRUCTURE_DAMAGE": {
+      "en": [
+        "public building",
+        "building cracked",
+        "wall collapsed",
+        "roof leaking",
+        "structure damaged",
+        "anganwadi building",
+        "community hall",
+        "dilapidated building",
+        "dangerous building",
+        "building collapse",
+        "about to collapse",
+        "wall about to collapse"
+      ],
+      "kn": [
+        "ಕಟ್ಟಡ ಬಿರುಕು",
+        "ಗೋಡೆ ಕುಸಿದ"
+      ],
+      "tl": [
+        "gode kusidide",
+        "building biruku"
+      ]
+    },
+    "BUILDING.RAILING": {
+      "en": [
+        "railing broken",
+        "broken railing",
+        "handrail",
+        "bridge railing"
+      ],
+      "kn": [
+        "ಕಂಬಿ ಮುರಿದ",
+        "ಕಂಬಿಬೇಲಿ"
+      ],
+      "tl": [
+        "railing muridide"
+      ]
+    },
+    "BUILDING.RETAINING_WALL": {
+      "en": [
+        "retaining wall",
+        "compound wall collapsed",
+        "wall caved"
+      ],
+      "kn": [
+        "ತಡೆಗೋಡೆ ಕುಸಿದ",
+        "ಗೋಡೆ ಕುಸಿತ"
+      ],
+      "tl": [
+        "tadegode",
+        "wall kusidide"
+      ]
+    },
+    "STORMWATER.CULVERT": {
+      "en": [
+        "culvert",
+        "small bridge collapsed",
+        "drain bridge"
+      ],
+      "kn": [
+        "ಮೋರಿ"
+      ],
+      "tl": [
+        "mori",
+        "mori haalagide"
+      ]
+    },
+    "STORMWATER.BLOCKED_INLET": {
+      "en": [
+        "storm drain",
+        "stormwater drain",
+        "rajakaluve",
+        "raja kaluve",
+        "drain grating",
+        "inlet blocked"
+      ],
+      "kn": [
+        "ರಾಜಕಾಲುವೆ",
+        "ಮಳೆನೀರು ಚರಂಡಿ"
+      ],
+      "tl": [
+        "rajakaluve",
+        "raja kaluve",
+        "male neeru charandi"
+      ]
+    },
+    "STORMWATER.WATERLOGGING": {
+      "en": [
+        "waterlogging",
+        "water logging",
+        "water logged",
+        "waterlogged",
+        "flooded road",
+        "road flooded",
+        "flooding",
+        "rain water stagnant",
+        "stagnant water",
+        "water stagnation",
+        "underpass flooded"
+      ],
+      "kn": [
+        "ನೀರು ನಿಂತಿದೆ",
+        "ಮಳೆ ನೀರು ನಿಂತ",
+        "ಜಲಾವೃತ",
+        "ಪ್ರವಾಹ",
+        "ನೀರು ನಿಲ್ಲು",
+        "ನೀರು ತುಂಬಿ"
+      ],
+      "tl": [
+        "neeru nintide",
+        "male neeru nintide",
+        "neer nintide",
+        "jalavrutha",
+        "neeru nillutte",
+        "neeru nilluttade"
+      ]
+    },
+    "ACCESS.FOOTPATH_OBSTRUCTED": {
+      "en": [
+        "footpath encroached",
+        "encroachment on footpath",
+        "footpath blocked",
+        "cannot walk on footpath",
+        "footpath occupied",
+        "encroach",
+        "encroachment",
+        "footpath occupied by shops",
+        "hawkers on footpath"
+      ],
+      "kn": [
+        "ಪಾದಚಾರಿ ಮಾರ್ಗ ಒತ್ತುವರಿ",
+        "ಫುಟ್‌ಪಾತ್ ಒತ್ತುವರಿ"
+      ],
+      "tl": [
+        "footpath ottuvari",
+        "footpath occupy"
+      ]
+    },
+    "ACCESS.PEDESTRIAN_ROUTE_BLOCKED": {
+      "en": [
+        "pedestrian path blocked",
+        "no way to walk",
+        "walkway blocked",
+        "skywalk"
+      ],
+      "kn": [
+        "ನಡೆದಾಡಲು ಆಗುತ್ತಿಲ್ಲ"
+      ],
+      "tl": [
+        "nadeyoke agtilla",
+        "nadeyalu aagtilla"
+      ]
+    },
+    "ACCESS.RAMP_DAMAGE": {
+      "en": [
+        "ramp",
+        "wheelchair",
+        "disabled access",
+        "handicap access"
+      ],
+      "kn": [
+        "ಇಳಿಜಾರು",
+        "ಗಾಲಿಕುರ್ಚಿ"
+      ],
+      "tl": [
+        "ramp illa"
+      ]
+    },
+    "ACCESS.LIFT_ESCALATOR": {
+      "en": [
+        "escalator",
+        "lift not working",
+        "elevator not working",
+        "lift broken",
+        "elevator broken"
+      ],
+      "kn": [
+        "ಎಸ್ಕಲೇಟರ್",
+        "ಲಿಫ್ಟ್ ಕೆಟ್ಟ"
+      ],
+      "tl": [
+        "lift kettide",
+        "escalator kettide"
+      ]
+    }
+  },
+  "out_of_scope": {
+    "PERSONAL_DISPUTE": {
+      "en": [
+        "neighbour",
+        "neighbor",
+        "my landlord",
+        "tenant",
+        "family dispute",
+        "husband",
+        "wife",
+        "boundary dispute with",
+        "fight with",
+        "harassing me",
+        "loan",
+        "personal"
+      ],
+      "kn": [
+        "ನೆರೆಹೊರೆ",
+        "ಮನೆ ಮಾಲೀಕ",
+        "ಜಗಳ"
+      ],
+      "tl": [
+        "pakkadmane",
+        "jagala",
+        "mane maalika"
+      ]
+    },
+    "NON_CIVIC_GRIEVANCE": {
+      "en": [
+        "pension",
+        "ration card",
+        "ration",
+        "scholarship",
+        "aadhaar",
+        "aadhar",
+        "salary",
+        "job",
+        "employment",
+        "hospital",
+        "doctor",
+        "medicine",
+        "school admission",
+        "teacher",
+        "police",
+        "fir",
+        "theft",
+        "stolen",
+        "passport",
+        "caste certificate",
+        "income certificate",
+        "subsidy",
+        "loan waiver",
+        "gruha lakshmi",
+        "anna bhagya",
+        "welfare",
+        "land record",
+        "rtc",
+        "khata transfer",
+        "property tax refund",
+        "electricity bill",
+        "water bill",
+        "bill payment"
+      ],
+      "kn": [
+        "ಪಿಂಚಣಿ",
+        "ಪಡಿತರ",
+        "ವಿದ್ಯಾರ್ಥಿ ವೇತನ",
+        "ಆಧಾರ್",
+        "ಸಂಬಳ",
+        "ಉದ್ಯೋಗ",
+        "ಆಸ್ಪತ್ರೆ",
+        "ಪೊಲೀಸ್",
+        "ಕಳ್ಳತನ",
+        "ಜಾತಿ ಪ್ರಮಾಣ",
+        "ಗೃಹಲಕ್ಷ್ಮಿ",
+        "ಅನ್ನಭಾಗ್ಯ"
+      ],
+      "tl": [
+        "pinchani",
+        "padithara",
+        "padithara card",
+        "sambala",
+        "udyoga",
+        "aaspatre",
+        "kallatana"
+      ]
+    }
+  },
+  "severity_cues": {
+    "en": [
+      "accident",
+      "injured",
+      "fell",
+      "dangerous",
+      "danger",
+      "child",
+      "children",
+      "school",
+      "hospital nearby",
+      "night",
+      "elderly",
+      "electrocution",
+      "shock",
+      "deep",
+      "big",
+      "huge",
+      "urgent",
+      "emergency"
+    ],
+    "kn": [
+      "ಅಪಘಾತ",
+      "ಅಪಾಯ",
+      "ಮಕ್ಕಳು",
+      "ಶಾಲೆ",
+      "ತುರ್ತು",
+      "ಆಳ",
+      "ದೊಡ್ಡ"
+    ],
+    "tl": [
+      "apaghata",
+      "apaya",
+      "makkalu",
+      "shaale",
+      "thurthu",
+      "doddadu",
+      "aala"
+    ]
+  },
+  "transliteration_glossary": {
+    "rasthe": "road",
+    "raste": "road",
+    "rastey": "road",
+    "gundi": "pothole",
+    "hondaa": "pothole",
+    "kasa": "garbage",
+    "neeru": "water",
+    "neer": "water",
+    "charandi": "drain",
+    "olacharandi": "sewer",
+    "deepa": "light",
+    "beedi": "street",
+    "mara": "tree",
+    "kamba": "pole",
+    "tanti": "wire",
+    "nalli": "tap",
+    "haalagide": "is damaged",
+    "halagide": "is damaged",
+    "biddide": "has fallen",
+    "illa": "not",
+    "ide": "is",
+    "tumba": "very",
+    "dina": "days",
+    "vaara": "week",
+    "tingalu": "month",
+    "hattira": "near",
+    "munde": "in front of",
+    "pakka": "next to",
+    "bali": "near",
+    "namma": "our",
+    "alli": "in",
+    "agide": "has become",
+    "aagide": "has become",
+    "hogilla": "has not gone",
+    "madi": "please do"
+  },
+  "asset_defect_pairs": {
+    "_note": "Matched when an asset word and a defect word occur in the same clause (words are prefixes, so 'block' matches 'blocked').",
+    "ROAD.SURFACE_DAMAGE": {
+      "assets": [
+        "road",
+        "street",
+        "lane",
+        "rasthe",
+        "raste",
+        "ರಸ್ತೆ"
+      ],
+      "defects": [
+        "broken",
+        "damaged",
+        "crack",
+        "crumbl",
+        "worn",
+        "dug",
+        "haalag",
+        "halag",
+        "kittu",
+        "ಹಾಳ",
+        "ಬಿರುಕು",
+        "ಕಿತ್ತು"
+      ]
+    },
+    "ROAD.FOOTPATH_DAMAGE": {
+      "assets": [
+        "footpath",
+        "pavement",
+        "sidewalk",
+        "foot path",
+        "ಫುಟ್ಪಾತ್",
+        "ಪಾದಚಾರಿ"
+      ],
+      "defects": [
+        "broken",
+        "damaged",
+        "missing",
+        "uneven",
+        "crack",
+        "haalag",
+        "halag",
+        "ಹಾಳ",
+        "ಮುರಿ"
+      ]
+    },
+    "DRAIN.BLOCKED": {
+      "assets": [
+        "drain",
+        "gutter",
+        "nala",
+        "nallah",
+        "charandi",
+        "ಚರಂಡಿ"
+      ],
+      "defects": [
+        "block",
+        "clog",
+        "chok",
+        "silt",
+        "kattid",
+        "kattik",
+        "ಕಟ್ಟಿ",
+        "ಬ್ಲಾಕ್"
+      ]
+    },
+    "DRAIN.OVERFLOW": {
+      "assets": [
+        "drain",
+        "gutter",
+        "charandi",
+        "ಚರಂಡಿ"
+      ],
+      "defects": [
+        "overflow",
+        "spill",
+        "ukki",
+        "ಉಕ್ಕಿ"
+      ]
+    },
+    "WATER.PIPE_LEAK": {
+      "assets": [
+        "pipe",
+        "pipeline",
+        "valve",
+        "water line",
+        "ಪೈಪ್"
+      ],
+      "defects": [
+        "leak",
+        "burst",
+        "broken",
+        "gush",
+        "sorik",
+        "sorut",
+        "odedi",
+        "ಸೋರ",
+        "ಒಡೆ"
+      ]
+    },
+    "LIGHT.STREETLIGHT_OUT": {
+      "assets": [
+        "streetlight",
+        "street light",
+        "street lamp",
+        "lamp",
+        "light",
+        "deepa",
+        "ದೀಪ",
+        "ಲೈಟ್"
+      ],
+      "defects": [
+        "not working",
+        "not burning",
+        "off",
+        "dead",
+        "fused",
+        "broken",
+        "no light",
+        "urithilla",
+        "uriyuttilla",
+        "barta illa",
+        "barthilla",
+        "ಉರಿಯುತ್ತಿಲ್ಲ",
+        "ಕೆಟ್ಟು"
+      ]
+    },
+    "TREE.FALLEN": {
+      "assets": [
+        "tree",
+        "mara",
+        "ಮರ"
+      ],
+      "defects": [
+        "fell",
+        "fallen",
+        "uproot",
+        "collaps",
+        "biddi",
+        "ಬಿದ್ದ",
+        "ಉರುಳ"
+      ]
+    },
+    "WASTE.UNCOLLECTED": {
+      "assets": [
+        "garbage",
+        "waste",
+        "trash",
+        "kasa",
+        "ಕಸ"
+      ],
+      "defects": [
+        "not collected",
+        "not cleared",
+        "piled",
+        "pile",
+        "heap",
+        "rotting",
+        "smell",
+        "tegedilla",
+        "thegedilla",
+        "ತೆಗೆದಿಲ್ಲ",
+        "ರಾಶಿ"
+      ]
+    },
+    "STORMWATER.WATERLOGGING": {
+      "assets": [
+        "road",
+        "underpass",
+        "street",
+        "rasthe",
+        "ರಸ್ತೆ"
+      ],
+      "defects": [
+        "flooded",
+        "waterlog",
+        "water stagnat",
+        "knee deep water",
+        "neeru nint",
+        "ನೀರು ನಿಂತ"
+      ]
+    },
+    "BUILDING.STRUCTURE_DAMAGE": {
+      "assets": [
+        "building",
+        "wall",
+        "roof",
+        "ceiling",
+        "ಕಟ್ಟಡ",
+        "ಗೋಡೆ",
+        "kattada",
+        "gode"
+      ],
+      "defects": [
+        "collaps",
+        "crack",
+        "fall",
+        "dilapidat",
+        "caved",
+        "kusid",
+        "biruk",
+        "ಕುಸಿ",
+        "ಬಿರುಕು"
+      ]
+    },
+    "ACCESS.LIFT_ESCALATOR": {
+      "assets": [
+        "lift",
+        "elevator",
+        "escalator",
+        "ಲಿಫ್ಟ್",
+        "ಎಸ್ಕಲೇಟರ್"
+      ],
+      "defects": [
+        "not working",
+        "broken",
+        "stuck",
+        "stopped",
+        "out of order",
+        "kettide",
+        "ಕೆಟ್ಟ"
+      ]
+    }
+  },
+  "suppresses": {
+    "DRAIN.SEWAGE_LEAK": [
+      "WATER.PIPE_LEAK"
+    ],
+    "DRAIN.OPEN_MANHOLE": [
+      "DRAIN.BLOCKED"
+    ],
+    "TRANSPORT.SIGNAL_FAULT": [
+      "LIGHT.STREETLIGHT_OUT"
+    ]
+  }
+}

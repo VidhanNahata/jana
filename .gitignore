@@ -1,0 +1,55 @@
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# PyTorch & ML models
+*.pth
+*.pt
+*.pkl
+*.ckpt
+
+# Project specific data directories
+civic_dataset/
+ela_output/
+complaints_text.csv
+
+# Frontend
+node_modules/
+dist/
+.npm
+
+# Logs
+logs/
+*.log
+
+# IDEs
+.idea/
+.vscode/
+*.swp
+
+# Deployment secrets
+deploy/*.env
+
+# Model training data & runs
+training/data/
+training/runs/
+
+# Local model weights (install with scripts/install_models.py), databases, uploads
+models/*
+!models/MODEL_MANIFEST.json
+*.db
+uploads/
+training/weights/
+.DS_Store
+.pytest_cache/
+frontend/.vercel/

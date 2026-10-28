@@ -1,0 +1,15 @@
+{
+  "threshold": 0.2,
+  "inputSize": 640,
+  "model": "janasutra yolo11n-seg pothole (masks; 5 epochs from the epoch-11 detector, SAM2.1 pseudo-masks)",
+  "testMetrics": {
+    "threshold": 0.2,
+    "box_precision": 0.498,
+    "box_recall": 0.418,
+    "box_f1": 0.454,
+    "image_recall": 0.769,
+    "image_false_alarm_rate": 0.16,
+    "small_pothole_recall": null,
+    "note": "793 held-out test images; box metrics (test split has no mask labels); threshold 0.2 chosen to keep false alarms near the previous detector's (best-F1 0.15 gave 27% false alarms)"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "threshold": 0.761,
+  "crop": 256,
+  "shortSide": 512,
+  "classes": [
+    "real",
+    "ai_generated",
+    "screen_photo"
+  ],
+  "testMetrics": {
+    "test": {
+      "real_photos": 494,
+      "false_flag_rate": 0.0304,
+      "ai_generated_caught": 0.6638,
+      "ai_generated_correct_reason": 0.6638,
+      "ai_generated_images": 229,
+      "screen_photo_caught": 0.9869,
+      "screen_photo_correct_reason": 0.9869,
+      "screen_photo_images": 381
+    },
+    "test_openfake": {
+      "real_photos": 641,
+      "false_flag_rate": 0.053,
+      "ai_generated_caught": 0.389,
+      "ai_generated_correct_reason": 0.389,
+      "ai_generated_images": 509
+    },
+    "test_unseen_wukong": {
+      "real_photos": 252,
+      "false_flag_rate": 0.0675,
+      "ai_generated_caught": 0.4056,
+      "ai_generated_correct_reason": 0.4056,
+      "ai_generated_images": 143
+    }
+  }
+}

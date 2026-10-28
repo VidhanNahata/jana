@@ -1,0 +1,11 @@
+# Optional: local vision-language model for the civic AI pipeline (backend/ai).
+# Not needed on small hosts (set AI_VLM_ENABLED=false). Install on top of
+# requirements_backend.txt, then run: python scripts/install_models.py
+torch==2.9.1
+transformers==5.19.0
+accelerate==1.15.0
+# bitsandbytes   # only for AI_VLM_QUANTIZATION=bnb-8bit / bnb-4bit on CUDA
+# Training / evaluation of the lightweight text classifier
+scikit-learn==1.7.2
+joblib
+pytest

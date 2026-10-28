@@ -1,0 +1,658 @@
+{
+  "dataset": "training/civic_ai/eval/dev_eval_v1.jsonl",
+  "dataset_note": "developer-authored; not real citizen complaints",
+  "n": 48,
+  "knowledge_versions": {
+    "taxonomy": "1.1.0",
+    "registry": "1.0.0",
+    "lexicon": "1.2.0",
+    "gazetteer": "1.0.0"
+  },
+  "pipeline_version": "1.0.0",
+  "mode": "text stages only (VLM and detectors off)",
+  "subcategory_accuracy": 1.0,
+  "subcategory_macro_f1": 1.0,
+  "category_accuracy": 1.0,
+  "out_of_scope_precision": 1.0,
+  "out_of_scope_recall": 1.0,
+  "routing_accuracy": 1.0,
+  "routing_cases": 30,
+  "language_accuracy": 0.976,
+  "latency_ms_median": 2.35,
+  "latency_ms_p95": 3.6,
+  "confusions": [],
+  "per_class": {
+    "ACCESS.FOOTPATH_OBSTRUCTED": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 1
+    },
+    "ACCESS.LIFT_ESCALATOR": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 1
+    },
+    "DRAIN.BLOCKED": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 3
+    },
+    "DRAIN.OPEN_MANHOLE": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 1
+    },
+    "DRAIN.OVERFLOW": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 1
+    },
+    "DRAIN.SEWAGE_LEAK": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 1
+    },
+    "LIGHT.EXPOSED_WIRING": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 3
+    },
+    "LIGHT.STREETLIGHT_OUT": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "LIGHT.TRANSFORMER_ISSUE": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 1
+    },
+    "OUT_OF_SCOPE.NON_CIVIC_GRIEVANCE": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 5
+    },
+    "OUT_OF_SCOPE.PERSONAL_DISPUTE": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 2
+    },
+    "PARK.PLAYGROUND": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 1
+    },
+    "PARK.PUBLIC_TOILET": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 1
+    },
+    "ROAD.FOOTPATH_DAMAGE": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 1
+    },
+    "ROAD.POTHOLE": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 6
+    },
+    "ROAD.SURFACE_DAMAGE": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 1
+    },
+    "STORMWATER.WATERLOGGING": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 2
+    },
+    "TRANSPORT.CROSSING": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 1
+    },
+    "TRANSPORT.SIGNAL_FAULT": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 1
+    },
+    "TREE.FALLEN": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 2
+    },
+    "WASTE.DUMPING": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 1
+    },
+    "WASTE.UNCOLLECTED": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    },
+    "WATER.PIPE_LEAK": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 4
+    }
+  },
+  "cases": [
+    {
+      "text": "Deep pothole in front of Koramangala BDA complex, scooters skidding at night",
+      "expected": "ROAD.POTHOLE",
+      "got": "ROAD.POTHOLE",
+      "ok": true,
+      "expected_authority": "KA.BLR.SOUTH",
+      "got_authority": "KA.BLR.SOUTH",
+      "routing_status": "confirmation_required",
+      "routing_ok": true,
+      "expected_language": "en",
+      "got_language": "en"
+    },
+    {
+      "text": "Road surface has completely worn out and there are cracks all over",
+      "expected": "ROAD.SURFACE_DAMAGE",
+      "got": "ROAD.SURFACE_DAMAGE",
+      "ok": true,
+      "expected_authority": "KA.BLR.SOUTH",
+      "got_authority": "KA.BLR.SOUTH",
+      "routing_status": "confirmation_required",
+      "routing_ok": true,
+      "expected_language": "en",
+      "got_language": "en"
+    },
+    {
+      "text": "Footpath tiles are missing near the bakery, elderly people tripping",
+      "expected": "ROAD.FOOTPATH_DAMAGE",
+      "got": "ROAD.FOOTPATH_DAMAGE",
+      "ok": true,
+      "expected_authority": "KA.BLR.SOUTH",
+      "got_authority": "KA.BLR.SOUTH",
+      "routing_status": "confirmation_required",
+      "routing_ok": true,
+      "expected_language": "en",
+      "got_language": "en"
+    },
+    {
+      "text": "Garbage pile not cleared for ten days near the temple, dogs spreading it",
+      "expected": "WASTE.UNCOLLECTED",
+      "got": "WASTE.UNCOLLECTED",
+      "ok": true,
+      "expected_authority": "KA.BLR.SOUTH",
+      "got_authority": "KA.BLR.SOUTH",
+      "routing_status": "confirmation_required",
+      "routing_ok": true,
+      "expected_language": "en",
+      "got_language": "en"
+    },
+    {
+      "text": "People are dumping construction debris on the empty plot by the lake",
+      "expected": "WASTE.DUMPING",
+      "got": "WASTE.DUMPING",
+      "ok": true,
+      "expected_language": "en",
+      "got_language": "en"
+    },
+    {
+      "text": "Three street lights on 5th main are not working since last week",
+      "expected": "LIGHT.STREETLIGHT_OUT",
+      "got": "LIGHT.STREETLIGHT_OUT",
+      "ok": true,
+      "expected_authority": "KA.BLR.SOUTH",
+      "got_authority": "KA.BLR.SOUTH",
+      "routing_status": "confirmation_required",
+      "routing_ok": true,
+      "expected_language": "en",
+      "got_language": "en"
+    },
+    {
+      "text": "Electric wires hanging very low from the pole, can touch them by hand",
+      "expected": "LIGHT.EXPOSED_WIRING",
+      "got": "LIGHT.EXPOSED_WIRING",
+      "ok": true,
+      "expected_authority": "KA.ESCOM.BESCOM",
+      "got_authority": "KA.ESCOM.BESCOM",
+      "routing_status": "confirmation_required",
+      "routing_ok": true,
+      "expected_language": "en",
+      "got_language": "en"
+    },
+    {
+      "text": "Transformer making loud noise and sparking",
+      "expected": "LIGHT.TRANSFORMER_ISSUE",
+      "got": "LIGHT.TRANSFORMER_ISSUE",
+      "ok": true,
+      "expected_authority": "KA.ESCOM.BESCOM",
+      "got_authority": "KA.ESCOM.BESCOM",
+      "routing_status": "confirmation_required",
+      "routing_ok": true,
+      "expected_language": "en",
+      "got_language": "en"
+    },
+    {
+      "text": "Drinking water pipeline burst, water gushing on the road since morning",
+      "expected": "WATER.PIPE_LEAK",
+      "got": "WATER.PIPE_LEAK",
+      "ok": true,
+      "expected_authority": "KA.BWSSB",
+      "got_authority": "KA.BWSSB",
+      "routing_status": "resolved",
+      "routing_ok": true,
+      "expected_language": "en",
+      "got_language": "en"
+    },
+    {
+      "text": "Manhole cover is missing on the main road, very dangerous",
+      "expected": "DRAIN.OPEN_MANHOLE",
+      "got": "DRAIN.OPEN_MANHOLE",
+      "ok": true,
+      "expected_language": "en",
+      "got_language": "en"
+    },
+    {
+      "text": "Sewage overflowing from the manhole into houses",
+      "expected": "DRAIN.SEWAGE_LEAK",
+      "got": "DRAIN.SEWAGE_LEAK",
+      "ok": true,
+      "expected_authority": "KA.BWSSB",
+      "got_authority": "KA.BWSSB",
+      "routing_status": "resolved",
+      "routing_ok": true,
+      "expected_language": "en",
+      "got_language": "en"
+    },
+    {
+      "text": "Roadside drain is clogged with plastic and silt",
+      "expected": "DRAIN.BLOCKED",
+      "got": "DRAIN.BLOCKED",
+      "ok": true,
+      "expected_authority": "KA.BLR.SOUTH",
+      "got_authority": "KA.BLR.SOUTH",
+      "routing_status": "confirmation_required",
+      "routing_ok": true,
+      "expected_language": "en",
+      "got_language": "en"
+    },
+    {
+      "text": "After every rain the underpass gets flooded with water",
+      "expected": "STORMWATER.WATERLOGGING",
+      "got": "STORMWATER.WATERLOGGING",
+      "ok": true,
+      "expected_authority": "KA.BLR.SOUTH",
+      "got_authority": "KA.BLR.SOUTH",
+      "routing_status": "confirmation_required",
+      "routing_ok": true,
+      "expected_language": "en",
+      "got_language": "en"
+    },
+    {
+      "text": "Huge tree branch fell on the road and is blocking traffic",
+      "expected": "TREE.FALLEN",
+      "got": "TREE.FALLEN",
+      "ok": true,
+      "expected_authority": "KA.BLR.SOUTH",
+      "got_authority": "KA.BLR.SOUTH",
+      "routing_status": "confirmation_required",
+      "routing_ok": true,
+      "expected_language": "en",
+      "got_language": "en"
+    },
+    {
+      "text": "Signal lights at Silk Board junction are off, traffic chaos",
+      "expected": "TRANSPORT.SIGNAL_FAULT",
+      "got": "TRANSPORT.SIGNAL_FAULT",
+      "ok": true,
+      "expected_language": "en",
+      "got_language": "en"
+    },
+    {
+      "text": "Zebra crossing near the school has completely faded",
+      "expected": "TRANSPORT.CROSSING",
+      "got": "TRANSPORT.CROSSING",
+      "ok": true,
+      "expected_language": "en",
+      "got_language": "en"
+    },
+    {
+      "text": "Shops have encroached the entire footpath, we walk on the road",
+      "expected": "ACCESS.FOOTPATH_OBSTRUCTED",
+      "got": "ACCESS.FOOTPATH_OBSTRUCTED",
+      "ok": true,
+      "expected_authority": "KA.BLR.SOUTH",
+      "got_authority": "KA.BLR.SOUTH",
+      "routing_status": "confirmation_required",
+      "routing_ok": true,
+      "expected_language": "en",
+      "got_language": "en"
+    },
+    {
+      "text": "The swings in the children's park are broken",
+      "expected": "PARK.PLAYGROUND",
+      "got": "PARK.PLAYGROUND",
+      "ok": true,
+      "expected_language": "en",
+      "got_language": "en"
+    },
+    {
+      "text": "Public toilet near the market has no water and is filthy",
+      "expected": "PARK.PUBLIC_TOILET",
+      "got": "PARK.PUBLIC_TOILET",
+      "ok": true,
+      "expected_language": "en",
+      "got_language": "en"
+    },
+    {
+      "text": "Lift at the metro station is not working for a week",
+      "expected": "ACCESS.LIFT_ESCALATOR",
+      "got": "ACCESS.LIFT_ESCALATOR",
+      "ok": true,
+      "expected_authority": "KA.BMRCL",
+      "got_authority": "KA.BMRCL",
+      "routing_status": "resolved",
+      "routing_ok": true,
+      "expected_language": "en",
+      "got_language": "en"
+    },
+    {
+      "text": "Live wire fell on the road after the storm in our village",
+      "expected": "LIGHT.EXPOSED_WIRING",
+      "got": "LIGHT.EXPOSED_WIRING",
+      "ok": true,
+      "expected_authority": "KA.ESCOM.CESC",
+      "got_authority": "KA.ESCOM.CESC",
+      "routing_status": "resolved",
+      "routing_ok": true,
+      "expected_language": "en",
+      "got_language": "en"
+    },
+    {
+      "text": "Potholes all along NH 48 near Tumakuru",
+      "expected": "ROAD.POTHOLE",
+      "got": "ROAD.POTHOLE",
+      "ok": true,
+      "expected_authority": "IN.NHAI",
+      "got_authority": "IN.NHAI",
+      "routing_status": "confirmation_required",
+      "routing_ok": true,
+      "expected_language": "en",
+      "got_language": "en"
+    },
+    {
+      "text": "Gutter blocked in our village, water stagnating and mosquitoes",
+      "expected": "DRAIN.BLOCKED",
+      "got": "DRAIN.BLOCKED",
+      "ok": true,
+      "expected_authority": "KA.GP.GENERIC",
+      "got_authority": "KA.GP.GENERIC",
+      "routing_status": "authority_not_configured",
+      "routing_ok": true,
+      "expected_language": "en",
+      "got_language": "en"
+    },
+    {
+      "text": "Streetlights not working on Sayyaji Rao road",
+      "expected": "LIGHT.STREETLIGHT_OUT",
+      "got": "LIGHT.STREETLIGHT_OUT",
+      "ok": true,
+      "expected_authority": "KA.MC.MYSURU",
+      "got_authority": "KA.MC.MYSURU",
+      "routing_status": "confirmation_required",
+      "routing_ok": true,
+      "expected_language": "en",
+      "got_language": "en"
+    },
+    {
+      "text": "Garbage not collected in our ward for a week",
+      "expected": "WASTE.UNCOLLECTED",
+      "got": "WASTE.UNCOLLECTED",
+      "ok": true,
+      "expected_authority": "KA.MC.HUBBALLI_DHARWAD",
+      "got_authority": "KA.MC.HUBBALLI_DHARWAD",
+      "routing_status": "confirmation_required",
+      "routing_ok": true,
+      "expected_language": "en",
+      "got_language": "en"
+    },
+    {
+      "text": "Water pipe leaking near the bus stand",
+      "expected": "WATER.PIPE_LEAK",
+      "got": "WATER.PIPE_LEAK",
+      "ok": true,
+      "expected_authority": "KA.MC.BELAGAVI",
+      "got_authority": "KA.MC.BELAGAVI",
+      "routing_status": "confirmation_required",
+      "routing_ok": true,
+      "expected_language": "en",
+      "got_language": "en"
+    },
+    {
+      "text": "Big potholes on the road",
+      "expected": "ROAD.POTHOLE",
+      "got": "ROAD.POTHOLE",
+      "ok": true,
+      "expected_authority": null,
+      "got_authority": null,
+      "routing_status": "location_required",
+      "routing_ok": true,
+      "expected_language": "en",
+      "got_language": "en"
+    },
+    {
+      "text": "ನಮ್ಮ ಬೀದಿಯಲ್ಲಿ ರಸ್ತೆ ಗುಂಡಿಗಳು ತುಂಬಾ ಇವೆ, ಅಪಘಾತ ಆಗುತ್ತಿದೆ",
+      "expected": "ROAD.POTHOLE",
+      "got": "ROAD.POTHOLE",
+      "ok": true,
+      "expected_authority": "KA.BLR.SOUTH",
+      "got_authority": "KA.BLR.SOUTH",
+      "routing_status": "confirmation_required",
+      "routing_ok": true,
+      "expected_language": "kn",
+      "got_language": "kn"
+    },
+    {
+      "text": "ಕಸದ ರಾಶಿ ಒಂದು ವಾರದಿಂದ ತೆರವುಗೊಳಿಸಿಲ್ಲ",
+      "expected": "WASTE.UNCOLLECTED",
+      "got": "WASTE.UNCOLLECTED",
+      "ok": true,
+      "expected_authority": "KA.BLR.SOUTH",
+      "got_authority": "KA.BLR.SOUTH",
+      "routing_status": "confirmation_required",
+      "routing_ok": true,
+      "expected_language": "kn",
+      "got_language": "kn"
+    },
+    {
+      "text": "ಬೀದಿ ದೀಪಗಳು ಎರಡು ವಾರದಿಂದ ಆರಿಹೋಗಿವೆ",
+      "expected": "LIGHT.STREETLIGHT_OUT",
+      "got": "LIGHT.STREETLIGHT_OUT",
+      "ok": true,
+      "expected_authority": "KA.BLR.SOUTH",
+      "got_authority": "KA.BLR.SOUTH",
+      "routing_status": "confirmation_required",
+      "routing_ok": true,
+      "expected_language": "kn",
+      "got_language": "kn"
+    },
+    {
+      "text": "ಕುಡಿಯುವ ನೀರಿನ ಪೈಪ್ ಒಡೆದು ನೀರು ಪೋಲಾಗುತ್ತಿದೆ",
+      "expected": "WATER.PIPE_LEAK",
+      "got": "WATER.PIPE_LEAK",
+      "ok": true,
+      "expected_authority": "KA.BWSSB",
+      "got_authority": "KA.BWSSB",
+      "routing_status": "resolved",
+      "routing_ok": true,
+      "expected_language": "kn",
+      "got_language": "kn"
+    },
+    {
+      "text": "ಚರಂಡಿ ತುಂಬಿ ರಸ್ತೆಗೆ ಹರಿಯುತ್ತಿದೆ",
+      "expected": "DRAIN.OVERFLOW",
+      "got": "DRAIN.OVERFLOW",
+      "ok": true,
+      "expected_language": "kn",
+      "got_language": "kn"
+    },
+    {
+      "text": "ದೊಡ್ಡ ಮರ ರಸ್ತೆಗೆ ಬಿದ್ದಿದೆ",
+      "expected": "TREE.FALLEN",
+      "got": "TREE.FALLEN",
+      "ok": true,
+      "expected_authority": "KA.BLR.SOUTH",
+      "got_authority": "KA.BLR.SOUTH",
+      "routing_status": "confirmation_required",
+      "routing_ok": true,
+      "expected_language": "kn",
+      "got_language": "kn"
+    },
+    {
+      "text": "ಮಳೆ ಬಂದರೆ ರಸ್ತೆಯಲ್ಲಿ ನೀರು ನಿಲ್ಲುತ್ತದೆ",
+      "expected": "STORMWATER.WATERLOGGING",
+      "got": "STORMWATER.WATERLOGGING",
+      "ok": true,
+      "expected_language": "kn",
+      "got_language": "kn"
+    },
+    {
+      "text": "ವಿದ್ಯುತ್ ತಂತಿ ಕೆಳಗೆ ನೇತಾಡುತ್ತಿದೆ",
+      "expected": "LIGHT.EXPOSED_WIRING",
+      "got": "LIGHT.EXPOSED_WIRING",
+      "ok": true,
+      "expected_authority": "KA.ESCOM.CESC",
+      "got_authority": "KA.ESCOM.CESC",
+      "routing_status": "resolved",
+      "routing_ok": true,
+      "expected_language": "kn",
+      "got_language": "kn"
+    },
+    {
+      "text": "nammura rasthe pura gundi, bike odisoke agalla",
+      "expected": "ROAD.POTHOLE",
+      "got": "ROAD.POTHOLE",
+      "ok": true,
+      "expected_authority": "KA.BLR.SOUTH",
+      "got_authority": "KA.BLR.SOUTH",
+      "routing_status": "confirmation_required",
+      "routing_ok": true,
+      "expected_language": "kn_transliterated",
+      "got_language": "kn_transliterated"
+    },
+    {
+      "text": "kasa ella road mele bidtidare, yaaru clean madtilla",
+      "expected": "WASTE.UNCOLLECTED",
+      "got": "WASTE.UNCOLLECTED",
+      "ok": true,
+      "expected_language": "kn_transliterated",
+      "got_language": "kn_transliterated"
+    },
+    {
+      "text": "street light uriyutilla 1 tingalinda",
+      "expected": "LIGHT.STREETLIGHT_OUT",
+      "got": "LIGHT.STREETLIGHT_OUT",
+      "ok": true,
+      "expected_language": "kn_transliterated",
+      "got_language": "en"
+    },
+    {
+      "text": "charandi block agi neeru road mele bartide",
+      "expected": "DRAIN.BLOCKED",
+      "got": "DRAIN.BLOCKED",
+      "ok": true,
+      "expected_language": "kn_transliterated",
+      "got_language": "kn_transliterated"
+    },
+    {
+      "text": "ನಮ್ಮ area ಅಲ್ಲಿ water pipe leak ಆಗ್ತಿದೆ",
+      "expected": "WATER.PIPE_LEAK",
+      "got": "WATER.PIPE_LEAK",
+      "ok": true,
+      "expected_authority": "KA.BWSSB",
+      "got_authority": "KA.BWSSB",
+      "routing_status": "resolved",
+      "routing_ok": true,
+      "expected_language": "kn_en_mixed",
+      "got_language": "kn_en_mixed"
+    },
+    {
+      "text": "main road ಅಲ್ಲಿ huge pothole ಇದೆ please fix",
+      "expected": "ROAD.POTHOLE",
+      "got": "ROAD.POTHOLE",
+      "ok": true,
+      "expected_authority": "KA.BLR.SOUTH",
+      "got_authority": "KA.BLR.SOUTH",
+      "routing_status": "confirmation_required",
+      "routing_ok": true,
+      "expected_language": "kn_en_mixed",
+      "got_language": "kn_en_mixed"
+    },
+    {
+      "text": "My landlord is not returning my deposit",
+      "expected": "OUT_OF_SCOPE.PERSONAL_DISPUTE",
+      "got": "OUT_OF_SCOPE.PERSONAL_DISPUTE",
+      "ok": true
+    },
+    {
+      "text": "Neighbours play loud music every night, please take action",
+      "expected": "OUT_OF_SCOPE.PERSONAL_DISPUTE",
+      "got": "OUT_OF_SCOPE.PERSONAL_DISPUTE",
+      "ok": true
+    },
+    {
+      "text": "My old age pension has stopped coming",
+      "expected": "OUT_OF_SCOPE.NON_CIVIC_GRIEVANCE",
+      "got": "OUT_OF_SCOPE.NON_CIVIC_GRIEVANCE",
+      "ok": true
+    },
+    {
+      "text": "Need help getting my Aadhaar card address changed",
+      "expected": "OUT_OF_SCOPE.NON_CIVIC_GRIEVANCE",
+      "got": "OUT_OF_SCOPE.NON_CIVIC_GRIEVANCE",
+      "ok": true
+    },
+    {
+      "text": "Police station is not accepting my complaint about theft",
+      "expected": "OUT_OF_SCOPE.NON_CIVIC_GRIEVANCE",
+      "got": "OUT_OF_SCOPE.NON_CIVIC_GRIEVANCE",
+      "ok": true
+    },
+    {
+      "text": "ನನ್ನ ಪಡಿತರ ಚೀಟಿ ಇನ್ನೂ ಬಂದಿಲ್ಲ",
+      "expected": "OUT_OF_SCOPE.NON_CIVIC_GRIEVANCE",
+      "got": "OUT_OF_SCOPE.NON_CIVIC_GRIEVANCE",
+      "ok": true,
+      "expected_language": "kn",
+      "got_language": "kn"
+    },
+    {
+      "text": "Scholarship amount not credited to my account",
+      "expected": "OUT_OF_SCOPE.NON_CIVIC_GRIEVANCE",
+      "got": "OUT_OF_SCOPE.NON_CIVIC_GRIEVANCE",
+      "ok": true
+    }
+  ]
+}

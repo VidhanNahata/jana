@@ -1,0 +1,495 @@
+{
+  "taxonomy_id": "janasutra-civic-taxonomy",
+  "version": "1.1.0",
+  "released": "2026-10-28",
+  "notes": "Stable IDs: never reuse or renumber an ID; deprecate instead. severity: 1 low, 2 medium, 3 high (default for the ITIL priority matrix). legacy_code maps to the category strings stored by the pre-taxonomy app. 1.1.0: added ACCESS.LIFT_ESCALATOR (existing IDs unchanged).",
+  "categories": [
+    {
+      "id": "ROAD",
+      "name_en": "Roads and footpaths",
+      "name_kn": "ರಸ್ತೆಗಳು ಮತ್ತು ಪಾದಚಾರಿ ಮಾರ್ಗಗಳು",
+      "subcategories": [
+        {
+          "id": "ROAD.POTHOLE",
+          "name_en": "Pothole",
+          "name_kn": "ರಸ್ತೆ ಗುಂಡಿ",
+          "severity": 3,
+          "legacy_code": "pothole",
+          "asset": "road",
+          "visual_cues": "hole or depression in the road surface, broken asphalt, water-filled pit on a road"
+        },
+        {
+          "id": "ROAD.SURFACE_DAMAGE",
+          "name_en": "Damaged road surface",
+          "name_kn": "ಹಾಳಾದ ರಸ್ತೆ ಮೇಲ್ಮೈ",
+          "severity": 2,
+          "legacy_code": "road_damage",
+          "asset": "road",
+          "visual_cues": "cracked, crumbling, eroded or dug-up road surface without a distinct pothole"
+        },
+        {
+          "id": "ROAD.FOOTPATH_DAMAGE",
+          "name_en": "Broken footpath or pavement",
+          "name_kn": "ಮುರಿದ ಪಾದಚಾರಿ ಮಾರ್ಗ",
+          "severity": 2,
+          "legacy_code": "road_damage",
+          "asset": "footpath",
+          "visual_cues": "broken, missing or uneven footpath slabs or paver blocks"
+        },
+        {
+          "id": "ROAD.KERB_DAMAGE",
+          "name_en": "Damaged kerb or median",
+          "name_kn": "ಹಾಳಾದ ಅಂಚುಕಲ್ಲು / ಮಧ್ಯವಿಭಜಕ",
+          "severity": 1,
+          "legacy_code": "road_damage",
+          "asset": "road",
+          "visual_cues": "broken kerb stones or road median edge"
+        }
+      ]
+    },
+    {
+      "id": "DRAIN",
+      "name_en": "Drainage and sewage",
+      "name_kn": "ಚರಂಡಿ ಮತ್ತು ಒಳಚರಂಡಿ",
+      "subcategories": [
+        {
+          "id": "DRAIN.BLOCKED",
+          "name_en": "Blocked drain",
+          "name_kn": "ಕಟ್ಟಿಕೊಂಡ ಚರಂಡಿ",
+          "severity": 2,
+          "legacy_code": "drainage",
+          "asset": "surface_drain",
+          "visual_cues": "roadside drain clogged with silt, plastic or debris"
+        },
+        {
+          "id": "DRAIN.OVERFLOW",
+          "name_en": "Overflowing drain",
+          "name_kn": "ಉಕ್ಕಿ ಹರಿಯುತ್ತಿರುವ ಚರಂಡಿ",
+          "severity": 2,
+          "legacy_code": "drainage",
+          "asset": "surface_drain",
+          "visual_cues": "drain water spilling onto the road or footpath"
+        },
+        {
+          "id": "DRAIN.SEWAGE_LEAK",
+          "name_en": "Sewage leak or overflow",
+          "name_kn": "ಒಳಚರಂಡಿ ಸೋರಿಕೆ",
+          "severity": 3,
+          "legacy_code": "sewage",
+          "asset": "sewer",
+          "visual_cues": "dark foul sewage water from a sewer line or manhole"
+        },
+        {
+          "id": "DRAIN.OPEN_MANHOLE",
+          "name_en": "Open or broken manhole",
+          "name_kn": "ತೆರೆದ / ಮುರಿದ ಮ್ಯಾನ್‌ಹೋಲ್",
+          "severity": 3,
+          "legacy_code": "sewage",
+          "asset": "sewer",
+          "visual_cues": "manhole without a cover or with a broken cover"
+        }
+      ]
+    },
+    {
+      "id": "WATER",
+      "name_en": "Water supply infrastructure",
+      "name_kn": "ನೀರು ಸರಬರಾಜು ಮೂಲಸೌಕರ್ಯ",
+      "subcategories": [
+        {
+          "id": "WATER.PIPE_LEAK",
+          "name_en": "Leaking public water pipe",
+          "name_kn": "ಸೋರುತ್ತಿರುವ ನೀರಿನ ಪೈಪ್",
+          "severity": 2,
+          "legacy_code": "water_leak",
+          "asset": "water_main",
+          "visual_cues": "clean water gushing or pooling from a pipe, valve or supply line"
+        },
+        {
+          "id": "WATER.TAP_DAMAGE",
+          "name_en": "Damaged public tap",
+          "name_kn": "ಹಾಳಾದ ಸಾರ್ವಜನಿಕ ನಲ್ಲಿ",
+          "severity": 1,
+          "legacy_code": "water_leak",
+          "asset": "public_tap",
+          "visual_cues": "broken or continuously running public tap or standpost"
+        },
+        {
+          "id": "WATER.SUPPLY_INFRA_DAMAGE",
+          "name_en": "Broken water-supply structure",
+          "name_kn": "ಹಾಳಾದ ನೀರು ಸರಬರಾಜು ರಚನೆ",
+          "severity": 2,
+          "legacy_code": "water_leak",
+          "asset": "water_main",
+          "visual_cues": "damaged water tank, valve chamber or supply structure"
+        }
+      ]
+    },
+    {
+      "id": "WASTE",
+      "name_en": "Garbage and sanitation",
+      "name_kn": "ಕಸ ಮತ್ತು ನೈರ್ಮಲ್ಯ",
+      "subcategories": [
+        {
+          "id": "WASTE.OVERFLOWING_BIN",
+          "name_en": "Overflowing public bin",
+          "name_kn": "ತುಂಬಿ ಹರಿಯುತ್ತಿರುವ ಕಸದ ತೊಟ್ಟಿ",
+          "severity": 2,
+          "legacy_code": "garbage",
+          "asset": "solid_waste",
+          "visual_cues": "public dustbin or container overflowing with waste"
+        },
+        {
+          "id": "WASTE.UNCOLLECTED",
+          "name_en": "Uncollected garbage",
+          "name_kn": "ಸಂಗ್ರಹಿಸದ ಕಸ",
+          "severity": 2,
+          "legacy_code": "garbage",
+          "asset": "solid_waste",
+          "visual_cues": "garbage heap or bags left on a street"
+        },
+        {
+          "id": "WASTE.DUMPING",
+          "name_en": "Dumping on public land",
+          "name_kn": "ಸಾರ್ವಜನಿಕ ಸ್ಥಳದಲ್ಲಿ ಕಸ ಸುರಿಯುವುದು",
+          "severity": 2,
+          "legacy_code": "garbage",
+          "asset": "solid_waste",
+          "visual_cues": "construction debris or waste dumped on a vacant public plot, lake edge or roadside"
+        }
+      ]
+    },
+    {
+      "id": "LIGHT",
+      "name_en": "Streetlights and electrical infrastructure",
+      "name_kn": "ಬೀದಿದೀಪಗಳು ಮತ್ತು ವಿದ್ಯುತ್ ಮೂಲಸೌಕರ್ಯ",
+      "subcategories": [
+        {
+          "id": "LIGHT.STREETLIGHT_OUT",
+          "name_en": "Streetlight not working",
+          "name_kn": "ಕೆಲಸ ಮಾಡದ ಬೀದಿದೀಪ",
+          "severity": 1,
+          "legacy_code": "streetlight",
+          "asset": "streetlight",
+          "visual_cues": "unlit or broken streetlight lamp on a pole"
+        },
+        {
+          "id": "LIGHT.POLE_DAMAGE",
+          "name_en": "Damaged or leaning pole",
+          "name_kn": "ಹಾಳಾದ / ಬಾಗಿದ ಕಂಬ",
+          "severity": 3,
+          "legacy_code": "electricity",
+          "asset": "pole",
+          "visual_cues": "bent, cracked, leaning or fallen streetlight or electric pole"
+        },
+        {
+          "id": "LIGHT.EXPOSED_WIRING",
+          "name_en": "Exposed or hanging electrical wires",
+          "name_kn": "ತೆರೆದ / ನೇತಾಡುವ ವಿದ್ಯುತ್ ತಂತಿ",
+          "severity": 3,
+          "legacy_code": "electricity",
+          "asset": "power_distribution",
+          "visual_cues": "low-hanging or snapped wires, open junction or feeder box"
+        },
+        {
+          "id": "LIGHT.TRANSFORMER_ISSUE",
+          "name_en": "Transformer or distribution box hazard",
+          "name_kn": "ಟ್ರಾನ್ಸ್‌ಫಾರ್ಮರ್ ಅಪಾಯ",
+          "severity": 3,
+          "legacy_code": "electricity",
+          "asset": "power_distribution",
+          "visual_cues": "sparking, leaking or unfenced transformer or distribution box"
+        }
+      ]
+    },
+    {
+      "id": "TRANSPORT",
+      "name_en": "Road and transport infrastructure",
+      "name_kn": "ರಸ್ತೆ ಮತ್ತು ಸಾರಿಗೆ ಮೂಲಸೌಕರ್ಯ",
+      "subcategories": [
+        {
+          "id": "TRANSPORT.SIGN_DAMAGE",
+          "name_en": "Damaged road sign",
+          "name_kn": "ಹಾಳಾದ ರಸ್ತೆ ಫಲಕ",
+          "severity": 1,
+          "legacy_code": "traffic_signal",
+          "asset": "road_furniture",
+          "visual_cues": "bent, fallen or unreadable road sign or name board"
+        },
+        {
+          "id": "TRANSPORT.BUS_SHELTER",
+          "name_en": "Damaged bus shelter or stop",
+          "name_kn": "ಹಾಳಾದ ಬಸ್ ತಂಗುದಾಣ",
+          "severity": 1,
+          "legacy_code": "other",
+          "asset": "bus_shelter",
+          "visual_cues": "broken roof, seating or structure of a bus stop"
+        },
+        {
+          "id": "TRANSPORT.CROSSING",
+          "name_en": "Faded or unsafe pedestrian crossing",
+          "name_kn": "ಮಸುಕಾದ ಪಾದಚಾರಿ ದಾಟುವ ಪಟ್ಟಿ",
+          "severity": 2,
+          "legacy_code": "traffic_signal",
+          "asset": "road_marking",
+          "visual_cues": "zebra crossing markings worn away or crossing blocked"
+        },
+        {
+          "id": "TRANSPORT.BARRIER_DAMAGE",
+          "name_en": "Damaged barrier or guardrail",
+          "name_kn": "ಹಾಳಾದ ತಡೆಗೋಡೆ",
+          "severity": 2,
+          "legacy_code": "other",
+          "asset": "road_furniture",
+          "visual_cues": "broken crash barrier, guardrail or road divider railing"
+        },
+        {
+          "id": "TRANSPORT.SIGNAL_FAULT",
+          "name_en": "Traffic signal not working",
+          "name_kn": "ಕೆಲಸ ಮಾಡದ ಸಂಚಾರ ದೀಪ",
+          "severity": 3,
+          "legacy_code": "traffic_signal",
+          "asset": "traffic_signal",
+          "visual_cues": "traffic light dark, stuck or physically damaged"
+        }
+      ]
+    },
+    {
+      "id": "PARK",
+      "name_en": "Parks and public spaces",
+      "name_kn": "ಉದ್ಯಾನಗಳು ಮತ್ತು ಸಾರ್ವಜನಿಕ ಸ್ಥಳಗಳು",
+      "subcategories": [
+        {
+          "id": "PARK.BENCH_DAMAGE",
+          "name_en": "Broken bench",
+          "name_kn": "ಮುರಿದ ಬೆಂಚು",
+          "severity": 1,
+          "legacy_code": "other",
+          "asset": "park",
+          "visual_cues": "broken or missing park bench"
+        },
+        {
+          "id": "PARK.PLAYGROUND",
+          "name_en": "Unsafe playground equipment",
+          "name_kn": "ಅಸುರಕ್ಷಿತ ಆಟದ ಸಲಕರಣೆ",
+          "severity": 2,
+          "legacy_code": "other",
+          "asset": "park",
+          "visual_cues": "broken swing, slide or play equipment"
+        },
+        {
+          "id": "PARK.PUBLIC_TOILET",
+          "name_en": "Public toilet problem",
+          "name_kn": "ಸಾರ್ವಜನಿಕ ಶೌಚಾಲಯ ಸಮಸ್ಯೆ",
+          "severity": 2,
+          "legacy_code": "other",
+          "asset": "public_toilet",
+          "visual_cues": "damaged, locked or unusable public toilet"
+        },
+        {
+          "id": "PARK.WALKWAY",
+          "name_en": "Damaged park walkway",
+          "name_kn": "ಹಾಳಾದ ಉದ್ಯಾನ ನಡಿಗೆ ಮಾರ್ಗ",
+          "severity": 1,
+          "legacy_code": "other",
+          "asset": "park",
+          "visual_cues": "broken or overgrown walking path in a park"
+        }
+      ]
+    },
+    {
+      "id": "TREE",
+      "name_en": "Trees and obstructions",
+      "name_kn": "ಮರಗಳು ಮತ್ತು ಅಡೆತಡೆಗಳು",
+      "subcategories": [
+        {
+          "id": "TREE.FALLEN",
+          "name_en": "Fallen tree",
+          "name_kn": "ಬಿದ್ದ ಮರ",
+          "severity": 3,
+          "legacy_code": "tree_fall",
+          "asset": "street_tree",
+          "visual_cues": "uprooted or fallen tree across a road, footpath or vehicle"
+        },
+        {
+          "id": "TREE.DANGEROUS_BRANCH",
+          "name_en": "Dangerous branch",
+          "name_kn": "ಅಪಾಯಕಾರಿ ಕೊಂಬೆ",
+          "severity": 2,
+          "legacy_code": "tree_fall",
+          "asset": "street_tree",
+          "visual_cues": "broken or hanging branch above a road or wires"
+        },
+        {
+          "id": "TREE.OBSTRUCTION",
+          "name_en": "Obstruction on a public way",
+          "name_kn": "ಸಾರ್ವಜನಿಕ ಮಾರ್ಗದಲ್ಲಿ ಅಡಚಣೆ",
+          "severity": 2,
+          "legacy_code": "other",
+          "asset": "footpath",
+          "visual_cues": "debris, branches or material blocking a road or footpath"
+        }
+      ]
+    },
+    {
+      "id": "BUILDING",
+      "name_en": "Public buildings and amenities",
+      "name_kn": "ಸಾರ್ವಜನಿಕ ಕಟ್ಟಡಗಳು ಮತ್ತು ಸೌಲಭ್ಯಗಳು",
+      "subcategories": [
+        {
+          "id": "BUILDING.STRUCTURE_DAMAGE",
+          "name_en": "Damaged public structure",
+          "name_kn": "ಹಾಳಾದ ಸಾರ್ವಜನಿಕ ರಚನೆ",
+          "severity": 2,
+          "legacy_code": "other",
+          "asset": "public_building",
+          "visual_cues": "cracked or crumbling public building, wall or shelter"
+        },
+        {
+          "id": "BUILDING.RAILING",
+          "name_en": "Broken railing",
+          "name_kn": "ಮುರಿದ ಕಂಬಿಬೇಲಿ",
+          "severity": 2,
+          "legacy_code": "other",
+          "asset": "public_building",
+          "visual_cues": "broken handrail or railing on a bridge, footpath or stairs"
+        },
+        {
+          "id": "BUILDING.RETAINING_WALL",
+          "name_en": "Damaged retaining wall",
+          "name_kn": "ಹಾಳಾದ ತಡೆಗೋಡೆ (ರಿಟೈನಿಂಗ್ ವಾಲ್)",
+          "severity": 3,
+          "legacy_code": "other",
+          "asset": "retaining_wall",
+          "visual_cues": "cracked, bulging or collapsed retaining or compound wall on public land"
+        }
+      ]
+    },
+    {
+      "id": "STORMWATER",
+      "name_en": "Stormwater and flooding infrastructure",
+      "name_kn": "ಮಳೆನೀರು ಮತ್ತು ಪ್ರವಾಹ ಮೂಲಸೌಕರ್ಯ",
+      "subcategories": [
+        {
+          "id": "STORMWATER.CULVERT",
+          "name_en": "Damaged culvert",
+          "name_kn": "ಹಾಳಾದ ಮೋರಿ",
+          "severity": 2,
+          "legacy_code": "drainage",
+          "asset": "stormwater_drain",
+          "visual_cues": "broken or collapsed culvert under a road"
+        },
+        {
+          "id": "STORMWATER.BLOCKED_INLET",
+          "name_en": "Blocked stormwater inlet",
+          "name_kn": "ಕಟ್ಟಿಕೊಂಡ ಮಳೆನೀರು ಒಳಹರಿವು",
+          "severity": 2,
+          "legacy_code": "drainage",
+          "asset": "stormwater_drain",
+          "visual_cues": "storm drain grating or inlet blocked with debris"
+        },
+        {
+          "id": "STORMWATER.WATERLOGGING",
+          "name_en": "Drainage-related waterlogging",
+          "name_kn": "ಚರಂಡಿ ಸಂಬಂಧಿತ ನೀರು ನಿಲ್ಲುವಿಕೆ",
+          "severity": 2,
+          "legacy_code": "drainage",
+          "asset": "stormwater_drain",
+          "visual_cues": "rainwater standing on a road or underpass"
+        }
+      ]
+    },
+    {
+      "id": "ACCESS",
+      "name_en": "Accessibility and public access",
+      "name_kn": "ಪ್ರವೇಶಸಾಧ್ಯತೆ ಮತ್ತು ಸಾರ್ವಜನಿಕ ಪ್ರವೇಶ",
+      "subcategories": [
+        {
+          "id": "ACCESS.FOOTPATH_OBSTRUCTED",
+          "name_en": "Obstructed footpath",
+          "name_kn": "ಅಡ್ಡಿಯಾದ ಪಾದಚಾರಿ ಮಾರ್ಗ",
+          "severity": 2,
+          "legacy_code": "other",
+          "asset": "footpath",
+          "visual_cues": "footpath blocked by structures, encroachment or parked material"
+        },
+        {
+          "id": "ACCESS.PEDESTRIAN_ROUTE_BLOCKED",
+          "name_en": "Blocked pedestrian route",
+          "name_kn": "ತಡೆಯಾದ ಪಾದಚಾರಿ ಮಾರ್ಗ",
+          "severity": 2,
+          "legacy_code": "other",
+          "asset": "footpath",
+          "visual_cues": "pedestrian path or crossing blocked or unusable"
+        },
+        {
+          "id": "ACCESS.RAMP_DAMAGE",
+          "name_en": "Damaged access ramp",
+          "name_kn": "ಹಾಳಾದ ಇಳಿಜಾರು ದಾರಿ (ರ‍್ಯಾಂಪ್)",
+          "severity": 2,
+          "legacy_code": "other",
+          "asset": "public_building",
+          "visual_cues": "broken or missing wheelchair ramp"
+        },
+        {
+          "id": "ACCESS.LIFT_ESCALATOR",
+          "name_en": "Public lift or escalator not working",
+          "name_kn": "ಸಾರ್ವಜನಿಕ ಲಿಫ್ಟ್ ಅಥವಾ ಎಸ್ಕಲೇಟರ್ ಕೆಲಸ ಮಾಡುತ್ತಿಲ್ಲ",
+          "severity": 2,
+          "legacy_code": "other",
+          "asset": "public_building",
+          "visual_cues": "stopped or barricaded escalator or lift at a station, skywalk or public building"
+        }
+      ]
+    },
+    {
+      "id": "OTHER",
+      "name_en": "Other civic infrastructure",
+      "name_kn": "ಇತರ ನಾಗರಿಕ ಮೂಲಸೌಕರ್ಯ",
+      "subcategories": [
+        {
+          "id": "OTHER.CIVIC_INFRA",
+          "name_en": "Other civic infrastructure issue",
+          "name_kn": "ಇತರ ನಾಗರಿಕ ಮೂಲಸೌಕರ್ಯ ಸಮಸ್ಯೆ",
+          "severity": 2,
+          "legacy_code": "other",
+          "asset": "unknown",
+          "visual_cues": "a public infrastructure problem not covered above"
+        }
+      ]
+    },
+    {
+      "id": "OUT_OF_SCOPE",
+      "name_en": "Out of scope",
+      "name_kn": "ವ್ಯಾಪ್ತಿಗೆ ಹೊರಗಿದೆ",
+      "subcategories": [
+        {
+          "id": "OUT_OF_SCOPE.PERSONAL_DISPUTE",
+          "name_en": "Personal or private dispute",
+          "name_kn": "ವೈಯಕ್ತಿಕ ವಿವಾದ",
+          "severity": 1,
+          "legacy_code": "out_of_scope",
+          "asset": null,
+          "visual_cues": "not applicable"
+        },
+        {
+          "id": "OUT_OF_SCOPE.UNRELATED_IMAGE",
+          "name_en": "Unrelated photograph",
+          "name_kn": "ಸಂಬಂಧವಿಲ್ಲದ ಛಾಯಾಚಿತ್ರ",
+          "severity": 1,
+          "legacy_code": "out_of_scope",
+          "asset": null,
+          "visual_cues": "selfie, food, document, indoor private space, pet, screenshot or other non-civic scene"
+        },
+        {
+          "id": "OUT_OF_SCOPE.NON_CIVIC_GRIEVANCE",
+          "name_en": "Non-civic government request",
+          "name_kn": "ನಾಗರಿಕ ಮೂಲಸೌಕರ್ಯವಲ್ಲದ ಸರ್ಕಾರಿ ಮನವಿ",
+          "severity": 1,
+          "legacy_code": "out_of_scope",
+          "asset": null,
+          "visual_cues": "not applicable (welfare, pensions, ration, health, education, policing, employment)"
+        }
+      ]
+    }
+  ]
+}

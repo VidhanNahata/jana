@@ -1,0 +1,202 @@
+# JanaSutra: Civix-Intelligence — Project Overview / Synopsis
+
+**JanaSutra: Civix-Intelligence** is an AI-driven civic intelligence and complaint management platform designed to transform unstructured citizen reports into **verified, categorized, prioritized, and actionable municipal tasks**. The project is initially being developed for **Bengaluru City**, with the aim of improving the efficiency, transparency, and responsiveness of civic issue management.
+
+Traditional civic grievance systems generally depend on phone calls, emails, or web forms and often require significant manual effort from municipal authorities. Such systems can suffer from administrative backlogs, incorrect departmental routing, duplicate complaints, lack of real-time tracking, and difficulties in verifying the authenticity of submitted evidence. JanaSutra aims to address these problems by introducing an integrated AI pipeline capable of understanding citizen complaints and automatically assisting in their processing from submission to resolution.
+
+## Citizen Complaint Submission
+
+The proposed system will provide a simple, mobile-friendly interface through which citizens can report civic problems. A user can submit **one or more photographs of the issue along with a short textual description/comment**. The system also uses location information to identify where the reported problem is occurring.
+
+For photographs captured directly through the device camera, the system can use the **device's current location as the location of the reported problem**. When an image is uploaded from the gallery, JanaSutra can attempt to obtain the location from the photograph's **metadata**. If location metadata is unavailable, the system can request the location from the user. This location-handling mechanism is an experimental component of the current implementation and may be refined based on testing and feedback.
+
+The submitted report therefore consists primarily of **text, image evidence, and geographical information**, which are then processed by the AI pipeline.
+
+## Three-Layer AI Pipeline
+
+The core of JanaSutra is a three-layer AI architecture consisting of:
+
+1. **Verification Tier**
+2. **Semantic Tier**
+3. **Intelligence Tier**
+
+Together, these layers are intended to convert raw citizen submissions into reliable municipal tasks while reducing fraudulent, duplicated, and poorly prioritized complaints.
+
+### 1. Verification Tier — Image Authenticity
+
+The first layer focuses on verifying the authenticity of photographic evidence submitted with a complaint.
+
+JanaSutra uses **Error Level Analysis (ELA)** to identify potential inconsistencies in an image that may indicate manipulation or editing. The ELA output is then used along with a **Convolutional Neural Network (CNN)** to classify whether the submitted image is authentic or potentially tampered with.
+
+This component is intended to address the problem of fraudulent or reused photographic evidence. In conventional civic complaint systems, there may be no automated mechanism for determining whether an uploaded image genuinely represents the reported issue. JanaSutra therefore introduces computer-vision-based verification before the complaint proceeds through the rest of the pipeline.
+
+The project's Phase-1 work includes the collection of **authentic and tampered civic imagery** that can be used for training and evaluating the image-forensics model.
+
+### 2. Semantic Tier — Complaint Understanding and Deduplication
+
+After image verification, the complaint enters the semantic processing layer.
+
+The textual description supplied by the citizen is processed using **IndicBERT**, allowing JanaSutra to handle complaints across Indian languages and identify complaints that refer to the same underlying civic issue even when they are written differently or in different languages.
+
+The system uses **Semantic Textual Similarity (STS)** to determine whether two complaints are semantically related. A similarity score of **more than 0.85** is proposed as the threshold for identifying sufficiently similar complaints. This semantic comparison is combined with **geographical proximity** so that reports are not treated as duplicates solely because their descriptions happen to be similar.
+
+When multiple complaints are determined to refer to the same civic problem, JanaSutra does not create unnecessary independent tickets for every citizen report. Instead, the reports can be merged into a single **Master Ticket** representing the underlying issue.
+
+For example, if several citizens independently report the same pothole, the system can recognize that these reports correspond to one physical problem and associate them with the same Master Ticket. Additional reports can therefore contribute evidence and indicate greater public impact without unnecessarily increasing the number of tickets that municipal authorities have to process.
+
+This mechanism is intended to significantly reduce the administrative workload created by **duplicate complaints**, while still preserving the information contained in those reports.
+
+The multilingual nature of IndicBERT also aims to reduce the linguistic barriers that can occur when citizens describe the same issue using different Indian languages.
+
+### 3. Intelligence Tier — Prioritization and Departmental Routing
+
+The final AI layer is responsible for determining the **importance and handling priority of a complaint** and identifying the appropriate municipal department to which it should be routed.
+
+JanaSutra proposes the use of a **Random Forest machine-learning model** for intelligent prioritization and routing. The model can consider factors associated with the reported issue, including its **urgency, severity, population density, and traffic density**, among other relevant features.
+
+The project's proposed priority mechanism is based on:
+
+**Priority = Urgency + Severity − 1**
+
+The resulting priority determines the level of response required. For example, a **P1 priority represents an issue requiring immediate action**. The prioritization mechanism is intended to ensure that highly severe or urgent civic problems receive attention before comparatively less critical issues.
+
+For Master Tickets, repeated reports of the same underlying issue can also provide additional evidence of its importance. Instead of generating a separate ticket for every duplicate report, the system can update the priority or significance of the existing Master Ticket based on the incoming reports.
+
+This allows JanaSutra to distinguish between the **number of complaints submitted** and the **number of actual civic problems that need to be resolved**, while still using citizen activity as useful information for prioritization.
+
+## Automated Departmental Routing
+
+Once a complaint has been understood and prioritized, JanaSutra determines the **appropriate municipal department** responsible for addressing the issue.
+
+The objective is to eliminate the need for officials to manually inspect and categorize every incoming complaint. Instead, the AI system analyzes the complaint's image and textual description and automatically determines the relevant category and department.
+
+The final output is therefore intended to be an **actionable municipal task** containing the relevant complaint information, location, priority, and departmental assignment.
+
+This automated categorization and routing is designed to reduce incorrect routing, shorten processing time, and decrease the administrative burden on municipal authorities.
+
+## Master Ticket System
+
+One of the key features distinguishing JanaSutra from conventional complaint platforms is its **Master Ticket-based duplicate management system**.
+
+In a conventional system, if 50 citizens report the same pothole, the municipality may receive 50 separate complaints. This can create unnecessary administrative work and make the overall number of reported tickets appear much larger than the number of actual problems.
+
+JanaSutra instead attempts to identify reports that correspond to the same underlying issue using:
+
+* **Semantic similarity of complaint descriptions**
+* **Multilingual NLP through IndicBERT**
+* **Geographical proximity**
+* **A proposed semantic similarity threshold of >0.85**
+
+If the reports correspond to the same issue, they are associated with a single **Master Ticket**. The incoming reports can then contribute to the Master Ticket's priority rather than creating redundant tickets.
+
+This approach is intended to reduce administrative duplication while allowing the system to identify areas where multiple citizens are experiencing the same problem.
+
+## GIS and Real-Time Urban Monitoring
+
+JanaSutra is not intended to function only as a citizen complaint form. The project also includes an **administrative dashboard with GIS-based visualization and heatmaps**.
+
+The dashboard will allow municipal authorities to observe reported civic problems geographically and identify **problem hotspots** across the city. Such visualization can help authorities understand where issues are concentrated and support more effective resource allocation.
+
+The proposed technical stack includes:
+
+* **React** for the frontend and administrative dashboard
+* **FastAPI** for the backend/server layer
+* **PostGIS** for geographical and spatial data management
+* **ST_ClusterDBSCAN** for server-side spatial clustering
+* AI/ML models for verification, semantic processing, prioritization, and routing
+
+Through this architecture, JanaSutra aims to provide real-time visibility into the distribution and status of civic problems rather than simply maintaining a list of individual complaints.
+
+## Proposed System Workflow
+
+The overall workflow of JanaSutra can be summarized as:
+
+**Citizen Report → Image/Text/Location Collection → Image Verification → Complaint Understanding → Duplicate Detection → Master Ticket Creation or Association → Priority Calculation → Departmental Routing → Municipal Action → Tracking and Monitoring**
+
+A new complaint is first submitted with its supporting information. The image is checked for authenticity, while the text is processed to understand the reported issue. The system then checks whether the complaint corresponds to an existing Master Ticket using semantic similarity and geographical proximity.
+
+If a matching issue exists, the new report is associated with that Master Ticket and can influence its priority. If no matching issue exists, a new ticket is generated.
+
+The system then calculates the complaint's priority using the available severity- and urgency-related information and assigns it to the appropriate department. The complaint and its progress can subsequently be monitored through the platform.
+
+## Objectives
+
+The major objectives of JanaSutra are to:
+
+* **Automate complaint verification** using ELA and CNN-based image analysis.
+* **Detect potentially fraudulent or manipulated photographic evidence.**
+* **Understand multilingual citizen complaints** using IndicBERT.
+* **Detect and merge duplicate complaints** using semantic similarity and geographical proximity.
+* **Create Master Tickets** for common underlying civic issues.
+* **Automatically prioritize complaints** based on urgency, severity, and contextual factors.
+* **Automatically route complaints to the appropriate municipal department.**
+* **Provide real-time GIS-based visualization** of reported civic issues.
+* **Reduce administrative workload and redundant ticket processing.**
+* **Improve response efficiency and resource allocation.**
+* **Increase transparency and citizen engagement in civic issue resolution.**
+* **Support data-driven urban infrastructure management.**
+
+## Scope of the Project
+
+The system is initially focused on **Bengaluru City**, but the proposed architecture is designed with eventual expansion in mind. The platform can potentially be deployed by municipal corporations to automate civic complaint management at a larger scale.
+
+The immediate implementation will be a **web-based platform**, while the architecture is intended to support future development into a dedicated **mobile application and a larger scalable civic intelligence platform**.
+
+The system can ultimately assist municipal authorities by reducing duplicate reports, minimizing verification delays, improving departmental routing, enabling real-time monitoring, and providing data-driven insights into urban infrastructure problems.
+
+## Motivation and Problem Addressed
+
+JanaSutra is motivated by several limitations in existing civic grievance systems.
+
+First, **administrative inefficiency** occurs when large numbers of citizens report the same problem separately. A single pothole, damaged road, overflowing drain, or other infrastructure failure can generate numerous individual complaints.
+
+Second, there are **authenticity concerns** associated with digital evidence. Without automated verification, manipulated, reused, or irrelevant images can potentially enter a complaint system.
+
+Third, **linguistic barriers** make it difficult to semantically connect complaints written in different Indian languages.
+
+Finally, conventional systems frequently lack effective **real-time tracking, automated categorization, intelligent prioritization, and geographical analytics**.
+
+JanaSutra attempts to address these limitations through the integration of computer vision, multilingual NLP, machine learning, and GIS rather than treating complaint submission as a purely manual administrative process.
+
+## Technical Development Plan
+
+The project is planned across five major phases:
+
+**Phase 1 — Data Acquisition and Preprocessing:**
+Collection and preparation of authentic and tampered civic images, along with multilingual complaint datasets required for training and evaluating the proposed models.
+
+**Phase 2 — AI Model Development:**
+Fine-tuning **IndicBERT** for the civic complaint domain and training the **ELA-CNN image-forensics model** for image authenticity verification.
+
+**Phase 3 — Backend and GIS Integration:**
+Development of the **FastAPI backend**, integration of the AI pipeline, and implementation of server-side spatial clustering using **ST_ClusterDBSCAN in PostGIS**.
+
+**Phase 4 — Frontend Development:**
+Development of the administrative dashboard and a mobile-friendly citizen-facing interface for complaint submission and tracking.
+
+**Phase 5 — System Validation and Deployment:**
+Testing the models and complete system against realistic civic complaint scenarios, evaluating model accuracy and classification efficiency, and preparing the platform for deployment.
+
+## Expected Impact
+
+By converting raw citizen reports into verified and actionable municipal tasks, JanaSutra aims to create a more efficient civic grievance ecosystem.
+
+Instead of treating every submitted complaint as an independent ticket, the system attempts to identify the **actual underlying civic issues**, determine their importance, and direct them to the appropriate authority. The combination of Master Tickets, automated prioritization, image verification, multilingual processing, and GIS visualization can help municipal authorities focus resources on the problems that require the greatest attention.
+
+The long-term vision is to evolve JanaSutra from a Bengaluru-focused web platform into a **scalable AI-powered civic intelligence platform** that can support larger urban environments and potentially be adapted for use by municipal corporations in other cities.
+
+## Alignment with Sustainable Development Goals
+
+JanaSutra also aligns with several United Nations Sustainable Development Goals:
+
+* SDG 9 — Industry, Innovation and Infrastructure:** By supporting data-driven management and maintenance of urban infrastructure.
+* SDG 11 — Sustainable Cities and Communities:** By improving urban service responsiveness and civic issue management.
+* SDG 16 — Peace, Justice and Strong Institutions:** By promoting transparency, accountability, and more efficient public service delivery.
+
+## Summary
+
+In essence, **JanaSutra: Civix-Intelligence** proposes an end-to-end AI-based system for civic complaint management. It combines **computer vision for image verification, IndicBERT-based multilingual semantic analysis for complaint understanding and deduplication, Random Forest-based intelligence for prioritization and departmental routing, and GIS technologies for spatial monitoring and urban analytics**.
+
+Its central objective is not simply to provide another platform for citizens to submit complaints, but to transform those complaints into **verified, consolidated, intelligently prioritized, and actionable municipal tasks**. Through the use of Master Tickets, the system can prevent repeated reports of the same issue from overwhelming municipal authorities, while its priority mechanism ensures that issues with greater urgency and severity can receive faster attention.
+
+The initial implementation targets Bengaluru and will begin as a web-based system, with the architecture allowing future expansion into a dedicated mobile application and a broader scalable civic intelligence platform.

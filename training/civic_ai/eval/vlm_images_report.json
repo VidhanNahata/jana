@@ -1,0 +1,738 @@
+{
+  "model": {
+    "name": "Qwen3-VL-2B-Instruct",
+    "license": "Apache-2.0",
+    "path": "models/qwen3-vl-2b-instruct",
+    "enabled": true,
+    "installed": true,
+    "loaded": true,
+    "device": "mps",
+    "dtype": "auto",
+    "quantization": "none",
+    "load_error": null
+  },
+  "max_image_side": 640,
+  "n_pothole": 30,
+  "n_non_civic": 11,
+  "valid_json_rate": 0.933,
+  "pothole_recall": 0.367,
+  "road_problem_recall": 0.4,
+  "pothole_scene_marked_civic": 0.9,
+  "non_civic_specificity": 0.545,
+  "non_civic_false_problem_rate": 0.0,
+  "model_load_s": 15.5,
+  "latency_ms_median": 23534,
+  "latency_ms_p95": 112627,
+  "peak_rss_gb": 0.56,
+  "gpu_driver_allocated_gb": 6.36,
+  "rows": [
+    {
+      "file": "training/data/potholes/test/images/keremberke_005342.jpg",
+      "label": "pothole",
+      "status": "ok",
+      "is_civic_scene": true,
+      "problems": [
+        "ROAD.POTHOLE"
+      ],
+      "scene": "A close-up view of a damaged asphalt road surface with a large pothole in the center.",
+      "quality": "good",
+      "latency_ms": 32848,
+      "warnings": []
+    },
+    {
+      "file": "training/data/potholes/test/images/manot_004774.jpg",
+      "label": "pothole",
+      "status": "ok",
+      "is_civic_scene": true,
+      "problems": [
+        "ROAD.POTHOLE"
+      ],
+      "scene": "A dark-colored vehicle is parked on a road with a large pothole in the asphalt, and the road surface appears cracked and damaged.",
+      "quality": "blurry",
+      "latency_ms": 20117,
+      "warnings": []
+    },
+    {
+      "file": "training/data/potholes/test/images/manot_005135.jpg",
+      "label": "pothole",
+      "status": "ok",
+      "is_civic_scene": true,
+      "problems": [],
+      "scene": "An aerial view of a damaged road surface with cracks, potholes, and debris, including a white circular object in the upper left corner.",
+      "quality": "blurry",
+      "latency_ms": 18925,
+      "warnings": []
+    },
+    {
+      "file": "training/data/potholes/test/images/mwpd_000146.jpg",
+      "label": "pothole",
+      "status": "invalid_model_output",
+      "is_civic_scene": null,
+      "problems": [],
+      "scene": null,
+      "quality": "unknown",
+      "latency_ms": 112627,
+      "warnings": [
+        "raw output: {\n  \"scene\": \"A close-up, tilted view of a weathered, gray road surface with visible cracks, small pits, and a rough texture. The surface appears to be made of asphalt or concrete, with some areas showing signs of erosion and wear.\",\n  \"is_civic_scene\": true,\n  \"image_quality\": \"blurry\",\n  \"problems"
+      ]
+    },
+    {
+      "file": "training/data/potholes/test/images/mwpd_000485.jpg",
+      "label": "pothole",
+      "status": "ok",
+      "is_civic_scene": true,
+      "problems": [
+        "ROAD.POTHOLE"
+      ],
+      "scene": "A close-up view of a damaged asphalt road with two large potholes, one in the foreground and another further down the road, showing cracked and eroded surface, with water pooled in the potholes.",
+      "quality": "good",
+      "latency_ms": 22385,
+      "warnings": []
+    },
+    {
+      "file": "training/data/potholes/test/images/mwpd_000646.jpg",
+      "label": "pothole",
+      "status": "ok",
+      "is_civic_scene": true,
+      "problems": [],
+      "scene": "A cracked and damaged asphalt road with a white dashed line in the middle, surrounded by dry grass and bare trees under a cloudy sky.",
+      "quality": "good",
+      "latency_ms": 20041,
+      "warnings": []
+    },
+    {
+      "file": "training/data/potholes/test/images/mwpd_000975.jpg",
+      "label": "pothole",
+      "status": "ok",
+      "is_civic_scene": true,
+      "problems": [
+        "ROAD.POTHOLE"
+      ],
+      "scene": "A damaged road surface with multiple potholes, a manhole cover, and a partially worn crosswalk.",
+      "quality": "blurry",
+      "latency_ms": 23920,
+      "warnings": []
+    },
+    {
+      "file": "training/data/potholes/test/images/mwpd_001380.jpg",
+      "label": "pothole",
+      "status": "ok",
+      "is_civic_scene": true,
+      "problems": [
+        "ROAD.POTHOLE"
+      ],
+      "scene": "A white van is parked on a cracked and damaged asphalt road with a large pothole in the middle of the road, under a partly cloudy sky.",
+      "quality": "good",
+      "latency_ms": 22977,
+      "warnings": []
+    },
+    {
+      "file": "training/data/potholes/test/images/mwpd_001838.jpg",
+      "label": "pothole",
+      "status": "ok",
+      "is_civic_scene": true,
+      "problems": [
+        "ROAD.POTHOLE"
+      ],
+      "scene": "A close-up view of a road surface with a large pothole, a reflection of a street scene below, and various objects like bicycles and signs.",
+      "quality": "blurry",
+      "latency_ms": 23585,
+      "warnings": []
+    },
+    {
+      "file": "training/data/potholes/test/images/mwpd_002202.jpg",
+      "label": "pothole",
+      "status": "ok",
+      "is_civic_scene": true,
+      "problems": [
+        "ROAD.SURFACE_DAMAGE"
+      ],
+      "scene": "A close-up view of a cracked and damaged asphalt road surface with visible potholes and cracks, showing shadows from trees.",
+      "quality": "good",
+      "latency_ms": 21397,
+      "warnings": []
+    },
+    {
+      "file": "training/data/potholes/test/images/mwpd_002709.jpg",
+      "label": "pothole",
+      "status": "ok",
+      "is_civic_scene": true,
+      "problems": [
+        "ROAD.POTHOLE"
+      ],
+      "scene": "A close-up view of a damaged road surface with several potholes, including a large water-filled pit in the foreground, with a white van and a white car visible in the background on a road surrounded by trees.",
+      "quality": "good",
+      "latency_ms": 24437,
+      "warnings": []
+    },
+    {
+      "file": "training/data/potholes/test/images/mwpd_002969.jpg",
+      "label": "pothole",
+      "status": "ok",
+      "is_civic_scene": true,
+      "problems": [],
+      "scene": "A black and white photo of a car upside down on a cracked road surface, with a pothole visible in the asphalt.",
+      "quality": "blurry",
+      "latency_ms": 20228,
+      "warnings": []
+    },
+    {
+      "file": "training/data/potholes/test/images/rdd_czech_013798.jpg",
+      "label": "pothole",
+      "status": "ok",
+      "is_civic_scene": true,
+      "problems": [],
+      "scene": "A view from a car's interior looking forward along a road with a red car parked on the right side, buildings in the background, and a cloudy sky.",
+      "quality": "good",
+      "latency_ms": 21450,
+      "warnings": []
+    },
+    {
+      "file": "training/data/potholes/test/images/rdd_czech_015483.jpg",
+      "label": "pothole",
+      "status": "ok",
+      "is_civic_scene": true,
+      "problems": [],
+      "scene": "A view from a vehicle's dashboard showing a pedestrian crossing with a red traffic light, a bus stop with a sign, and a street with a crosswalk. The sky is cloudy and the road surface appears to be intact.",
+      "quality": "good",
+      "latency_ms": 24232,
+      "warnings": []
+    },
+    {
+      "file": "training/data/potholes/test/images/rdd_india_007039.jpg",
+      "label": "pothole",
+      "status": "invalid_model_output",
+      "is_civic_scene": null,
+      "problems": [],
+      "scene": null,
+      "quality": "unknown",
+      "latency_ms": 118755,
+      "warnings": [
+        "raw output: {\"scene\": \"A view from a vehicle on a road with a green and black auto-rickshaw, a white SUV, a yellow construction vehicle, and various other vehicles and pedestrians. The road has visible potholes and cracks, and there are power lines and buildings in the background.\", \"is_civic_scene\": true, \"ima"
+      ]
+    },
+    {
+      "file": "training/data/potholes/test/images/rdd_india_008803.jpg",
+      "label": "pothole",
+      "status": "ok",
+      "is_civic_scene": true,
+      "problems": [],
+      "scene": "A paved road stretches into the distance, flanked by fields and trees, with a hazy sky above. The road appears to be in a rural area, and there are no visible signs of active traffic or pedestrians.",
+      "quality": "blurry",
+      "latency_ms": 20022,
+      "warnings": []
+    },
+    {
+      "file": "training/data/potholes/test/images/rdd_india_010211.jpg",
+      "label": "pothole",
+      "status": "ok",
+      "is_civic_scene": true,
+      "problems": [],
+      "scene": "A view from a vehicle on a multi-lane highway with a concrete and black-and-white striped barrier on the left, a large white truck and several cars in the middle, and a tall streetlight on the right. The sky is blue with some white clouds. A building with a large billboard is visible on the right side of the road.",
+      "quality": "good",
+      "latency_ms": 23799,
+      "warnings": []
+    },
+    {
+      "file": "training/data/potholes/test/images/rdd_india_011359.jpg",
+      "label": "pothole",
+      "status": "ok",
+      "is_civic_scene": true,
+      "problems": [],
+      "scene": "A view of a busy road in a city with vehicles, motorcycles, and buildings on both sides, featuring a road barrier and streetlights.",
+      "quality": "good",
+      "latency_ms": 18303,
+      "warnings": []
+    },
+    {
+      "file": "training/data/potholes/test/images/rdd_india_012482.jpg",
+      "label": "pothole",
+      "status": "ok",
+      "is_civic_scene": true,
+      "problems": [],
+      "scene": "A view from a vehicle on a paved road with trees and utility poles on both sides, under a hazy sky.",
+      "quality": "good",
+      "latency_ms": 23900,
+      "warnings": []
+    },
+    {
+      "file": "training/data/potholes/test/images/rdd_japan_024183.jpg",
+      "label": "pothole",
+      "status": "ok",
+      "is_civic_scene": true,
+      "problems": [],
+      "scene": "A view from a vehicle on a road with a crosswalk, buildings, and overhead power lines under a partly cloudy sky.",
+      "quality": "good",
+      "latency_ms": 23484,
+      "warnings": []
+    },
+    {
+      "file": "training/data/potholes/test/images/rdd_japan_025529.jpg",
+      "label": "pothole",
+      "status": "ok",
+      "is_civic_scene": true,
+      "problems": [],
+      "scene": "An asphalt road with cracked and broken surface, surrounded by buildings, parked cars, and a small utility building on the right. There are power lines and poles, and a few trees in the background.",
+      "quality": "good",
+      "latency_ms": 27178,
+      "warnings": []
+    },
+    {
+      "file": "training/data/potholes/test/images/rdd_japan_027882.jpg",
+      "label": "pothole",
+      "status": "ok",
+      "is_civic_scene": true,
+      "problems": [],
+      "scene": "A street view with a red car on the left, a blue truck on the right, and modern buildings in the background. The road has a white line and some visible damage on the surface.",
+      "quality": "good",
+      "latency_ms": 26495,
+      "warnings": []
+    },
+    {
+      "file": "training/data/potholes/test/images/rdd_japan_029331.jpg",
+      "label": "pothole",
+      "status": "ok",
+      "is_civic_scene": true,
+      "problems": [],
+      "scene": "A narrow asphalt road in a residential area with a multi-story apartment building on the left and a single-family house on the right, with overgrown grass and a few trees, and utility poles with wires overhead.",
+      "quality": "good",
+      "latency_ms": 22674,
+      "warnings": []
+    },
+    {
+      "file": "training/data/potholes/test/images/rdd_japan_031096.jpg",
+      "label": "pothole",
+      "status": "invalid_model_output",
+      "is_civic_scene": null,
+      "problems": [],
+      "scene": null,
+      "quality": "unknown",
+      "latency_ms": 129274,
+      "warnings": [
+        "raw output: {\"scene\": \"A paved road with a cracked asphalt surface, a manhole cover, and a gravel area with a fence and a sign in front of a building. There are several buildings in the background, and a utility pole with a sign on it.\", \"is_civic_scene\": true, \"image_quality\": \"good\", \"problems\": [{\"id\": \"ROAD"
+      ]
+    },
+    {
+      "file": "training/data/potholes/test/images/rdd_japan_032943.jpg",
+      "label": "pothole",
+      "status": "ok",
+      "is_civic_scene": true,
+      "problems": [],
+      "scene": "A view of a residential street with houses on both sides, a paved road, and overhead power lines under a partly cloudy sky.",
+      "quality": "good",
+      "latency_ms": 19337,
+      "warnings": []
+    },
+    {
+      "file": "training/data/potholes/test/images/rdd_united_states_018314.jpg",
+      "label": "pothole",
+      "status": "ok",
+      "is_civic_scene": true,
+      "problems": [],
+      "scene": "A paved road with a white line on the right side, surrounded by a multi-story building on the right and trees with autumn leaves on the left. The road has cracks and scattered leaves, and there are no visible potholes, footpaths, or other infrastructure issues.",
+      "quality": "good",
+      "latency_ms": 21524,
+      "warnings": []
+    },
+    {
+      "file": "training/data/potholes/test/images/rupesh1_003307.jpg",
+      "label": "pothole",
+      "status": "ok",
+      "is_civic_scene": true,
+      "problems": [
+        "ROAD.POTHOLE"
+      ],
+      "scene": "A close-up view of a damaged asphalt road surface with several potholes and cracks, including a large depression in the center and a manhole cover in the upper right corner.",
+      "quality": "good",
+      "latency_ms": 29381,
+      "warnings": []
+    },
+    {
+      "file": "training/data/potholes/test/images/rupesh1_003593.jpg",
+      "label": "pothole",
+      "status": "ok",
+      "is_civic_scene": true,
+      "problems": [
+        "ROAD.POTHOLE"
+      ],
+      "scene": "A traffic cone is placed over a hole in the road, with a dark pit and a small object inside, surrounded by dirt and gravel.",
+      "quality": "good",
+      "latency_ms": 25300,
+      "warnings": []
+    },
+    {
+      "file": "training/data/potholes/test/images/rupesh1_003813.jpg",
+      "label": "pothole",
+      "status": "ok",
+      "is_civic_scene": true,
+      "problems": [
+        "ROAD.POTHOLE"
+      ],
+      "scene": "A black and white photograph of a city street with a pothole in the road, a fire hydrant on the sidewalk, and several parked vehicles.",
+      "quality": "good",
+      "latency_ms": 28500,
+      "warnings": []
+    },
+    {
+      "file": "training/data/potholes/test/images/rupesh2_004127.jpg",
+      "label": "pothole",
+      "status": "ok",
+      "is_civic_scene": true,
+      "problems": [
+        "ROAD.POTHOLE"
+      ],
+      "scene": "A close-up view of a worn, cracked asphalt road with several potholes and visible damage to the surface.",
+      "quality": "good",
+      "latency_ms": 19273,
+      "warnings": []
+    },
+    {
+      "file": "training/data/authenticity/test/real/gi_real_00013.jpg",
+      "label": "non_civic",
+      "status": "ok",
+      "is_civic_scene": false,
+      "problems": [],
+      "scene": "An armadillo is walking on grass.",
+      "quality": "blurry",
+      "latency_ms": 6322,
+      "warnings": []
+    },
+    {
+      "file": "training/data/authenticity/test/real/gi_real_00173.jpg",
+      "label": "non_civic",
+      "status": "ok",
+      "is_civic_scene": false,
+      "problems": [],
+      "scene": "A dark-furred animal, likely a mink, is sitting on a patch of dry grass near a body of water.",
+      "quality": "good",
+      "latency_ms": 7467,
+      "warnings": []
+    },
+    {
+      "file": "training/data/authenticity/test/real/gi_real_00329.jpg",
+      "label": "non_civic",
+      "status": "ok",
+      "is_civic_scene": true,
+      "problems": [],
+      "scene": "A small dog wearing a black and white costume is on a leash on a concrete sidewalk, with the legs of two people standing nearby.",
+      "quality": "good",
+      "latency_ms": 9158,
+      "warnings": []
+    },
+    {
+      "file": "training/data/authenticity/test/real/gi_real_00513.jpg",
+      "label": "non_civic",
+      "status": "ok",
+      "is_civic_scene": false,
+      "problems": [],
+      "scene": "A baboon is walking on a grassy area with some dirt and rocks, near a rocky wall.",
+      "quality": "blurry",
+      "latency_ms": 8317,
+      "warnings": []
+    },
+    {
+      "file": "training/data/authenticity/test/real/gi_real_00697.jpg",
+      "label": "non_civic",
+      "status": "ok",
+      "is_civic_scene": false,
+      "problems": [],
+      "scene": "An elephant is standing in a grassy field with trees in the background.",
+      "quality": "good",
+      "latency_ms": 8031,
+      "warnings": []
+    },
+    {
+      "file": "training/data/authenticity/test/real/gi_real_00845.jpg",
+      "label": "non_civic",
+      "status": "ok",
+      "is_civic_scene": false,
+      "problems": [],
+      "scene": "Two colorful fish are swimming in an underwater environment with rocky terrain and sandy substrate.",
+      "quality": "good",
+      "latency_ms": 12198,
+      "warnings": []
+    },
+    {
+      "file": "training/data/authenticity/test/real/gi_real_01009.jpg",
+      "label": "non_civic",
+      "status": "ok",
+      "is_civic_scene": true,
+      "problems": [],
+      "scene": "A dead fish lies on a sandy surface.",
+      "quality": "blurry",
+      "latency_ms": 7506,
+      "warnings": []
+    },
+    {
+      "file": "training/data/authenticity/test/real/gi_real_01241.jpg",
+      "label": "non_civic",
+      "status": "ok",
+      "is_civic_scene": true,
+      "problems": [],
+      "scene": "A large grey naval aircraft carrier is docked at a pier, with a blue ramp leading to the ship's deck. A small black inflatable boat is on the water near the pier, and a metal walkway runs along the edge of the water. The sky is overcast and the water appears calm.",
+      "quality": "good",
+      "latency_ms": 11829,
+      "warnings": []
+    },
+    {
+      "file": "training/data/authenticity/test/real/gi_real_01397.jpg",
+      "label": "non_civic",
+      "status": "ok",
+      "is_civic_scene": true,
+      "problems": [],
+      "scene": "A screenshot of a clock app on a smartphone with a green grass background, showing the time as 3:21 PM and displaying various app icons for different categories.",
+      "quality": "good",
+      "latency_ms": 10995,
+      "warnings": []
+    },
+    {
+      "file": "training/data/authenticity/test/real/gi_real_01533.jpg",
+      "label": "non_civic",
+      "status": "ok",
+      "is_civic_scene": true,
+      "problems": [],
+      "scene": "A white, large, amphibious vehicle with a trailer is on a paved road with palm trees and greenery in the background.",
+      "quality": "good",
+      "latency_ms": 27776,
+      "warnings": []
+    },
+    {
+      "file": "training/data/authenticity/test/real/gi_real_01733.jpg",
+      "label": "non_civic",
+      "status": "ok",
+      "is_civic_scene": false,
+      "problems": [],
+      "scene": "A red alarm clock with a white face and black hands, showing the time as 7:00, is displayed against a white background.",
+      "quality": "good",
+      "latency_ms": 19336,
+      "warnings": []
+    },
+    {
+      "file": "training/data/authenticity/test/real/road_manot_004570.jpg",
+      "label": "excluded_road_photo_unlabelled",
+      "status": "ok",
+      "is_civic_scene": true,
+      "problems": [
+        "ROAD.POTHOLE"
+      ],
+      "scene": "A paved road with a large pothole in the foreground, surrounded by grass and trees, extending into the distance.",
+      "quality": "good",
+      "latency_ms": 30624,
+      "warnings": []
+    },
+    {
+      "file": "training/data/authenticity/test/real/road_manot_005157.jpg",
+      "label": "excluded_road_photo_unlabelled",
+      "status": "ok",
+      "is_civic_scene": true,
+      "problems": [],
+      "scene": "The interior of a vehicle is shown, with the dashboard and windshield visible. Through the windshield, a yellow bus and a white truck are parked on a paved surface, with a white car and a blue object in the background.",
+      "quality": "good",
+      "latency_ms": 27282,
+      "warnings": []
+    },
+    {
+      "file": "training/data/authenticity/test/real/road_mwpd_000207.jpg",
+      "label": "excluded_road_photo_unlabelled",
+      "status": "ok",
+      "is_civic_scene": true,
+      "problems": [
+        "ROAD.POTHOLE"
+      ],
+      "scene": "An overhead view of a man walking on a damaged road with potholes and water puddles.",
+      "quality": "blurry",
+      "latency_ms": 26800,
+      "warnings": []
+    },
+    {
+      "file": "training/data/authenticity/test/real/road_mwpd_000612.jpg",
+      "label": "excluded_road_photo_unlabelled",
+      "status": "ok",
+      "is_civic_scene": true,
+      "problems": [],
+      "scene": "A close-up view of a damaged road surface with cracks, erosion, and a water-filled pit, with green trees and foliage in the foreground.",
+      "quality": "good",
+      "latency_ms": 21949,
+      "warnings": []
+    },
+    {
+      "file": "training/data/authenticity/test/real/road_mwpd_001123.jpg",
+      "label": "excluded_road_photo_unlabelled",
+      "status": "invalid_model_output",
+      "is_civic_scene": null,
+      "problems": [],
+      "scene": null,
+      "quality": "unknown",
+      "latency_ms": 142627,
+      "warnings": [
+        "raw output: {\"scene\": \"A wet, paved road with several vehicles, including a white sedan and a black taxi, in a city with a prominent red-brick building featuring a clock tower. People are walking on the road, some holding umbrellas, and there are puddles on the asphalt. The road surface shows visible potholes a"
+      ]
+    },
+    {
+      "file": "training/data/authenticity/test/real/road_mwpd_001924.jpg",
+      "label": "excluded_road_photo_unlabelled",
+      "status": "ok",
+      "is_civic_scene": true,
+      "problems": [],
+      "scene": "A street in a city with a white car parked on the side, trees lining the road, and various buildings and vehicles in the background.",
+      "quality": "good",
+      "latency_ms": 22979,
+      "warnings": []
+    },
+    {
+      "file": "training/data/authenticity/test/real/road_mwpd_002260.jpg",
+      "label": "excluded_road_photo_unlabelled",
+      "status": "ok",
+      "is_civic_scene": true,
+      "problems": [
+        "ROAD.POTHOLE"
+      ],
+      "scene": "A close-up view of a damaged asphalt road surface with a large pothole in the center, showing cracks and erosion.",
+      "quality": "good",
+      "latency_ms": 23039,
+      "warnings": []
+    },
+    {
+      "file": "training/data/authenticity/test/real/road_mwpd_002841.jpg",
+      "label": "excluded_road_photo_unlabelled",
+      "status": "ok",
+      "is_civic_scene": true,
+      "problems": [
+        "ROAD.POTHOLE"
+      ],
+      "scene": "A nighttime street scene with a wet road, a pothole in the road, and a car driving on the road. The sidewalk is wet and has some snow on it. There are buildings and streetlights in the background.",
+      "quality": "dark",
+      "latency_ms": 30499,
+      "warnings": []
+    },
+    {
+      "file": "training/data/authenticity/test/real/road_rdd_czech_013798.jpg",
+      "label": "excluded_road_photo_unlabelled",
+      "status": "ok",
+      "is_civic_scene": true,
+      "problems": [],
+      "scene": "A view from a car's interior looking forward along a road with buildings, trees, and parked cars on the right side.",
+      "quality": "good",
+      "latency_ms": 20525,
+      "warnings": []
+    },
+    {
+      "file": "training/data/authenticity/test/real/road_rdd_india_006231.jpg",
+      "label": "excluded_road_photo_unlabelled",
+      "status": "ok",
+      "is_civic_scene": true,
+      "problems": [],
+      "scene": "A view from a vehicle on a paved road with trees on both sides, a person on a scooter in the distance, and a road sign on the right side.",
+      "quality": "good",
+      "latency_ms": 24924,
+      "warnings": []
+    },
+    {
+      "file": "training/data/authenticity/test/real/road_rdd_india_008803.jpg",
+      "label": "excluded_road_photo_unlabelled",
+      "status": "ok",
+      "is_civic_scene": true,
+      "problems": [],
+      "scene": "A view from a vehicle looking down a narrow road with fields on both sides, trees in the distance, and a hazy sky. The road surface appears to be asphalt, and there are no visible potholes, cracks, or other damage on the road. The road is flanked by grass and vegetation, and there are no visible footpaths, kerbs, or drains. The image is slightly blurred, possibly due to the camera being inside a v",
+      "quality": "blurry",
+      "latency_ms": 34109,
+      "warnings": []
+    },
+    {
+      "file": "training/data/authenticity/test/real/road_rdd_india_011014.jpg",
+      "label": "excluded_road_photo_unlabelled",
+      "status": "ok",
+      "is_civic_scene": true,
+      "problems": [],
+      "scene": "A view from a vehicle on a paved road with trees, power lines, and a billboard on the right side, with a truck and buildings in the distance.",
+      "quality": "good",
+      "latency_ms": 22436,
+      "warnings": []
+    },
+    {
+      "file": "training/data/authenticity/test/real/road_rdd_india_012395.jpg",
+      "label": "excluded_road_photo_unlabelled",
+      "status": "ok",
+      "is_civic_scene": true,
+      "problems": [],
+      "scene": "A view from a vehicle on a dirt and asphalt road with potholes, a roadside sign, and a tall streetlight pole.",
+      "quality": "blurry",
+      "latency_ms": 26596,
+      "warnings": []
+    },
+    {
+      "file": "training/data/authenticity/test/real/road_rdd_japan_025651.jpg",
+      "label": "excluded_road_photo_unlabelled",
+      "status": "ok",
+      "is_civic_scene": true,
+      "problems": [],
+      "scene": "A wet, cracked asphalt road curves through a residential area with houses, trees, and power lines under an overcast sky.",
+      "quality": "dark",
+      "latency_ms": 26034,
+      "warnings": []
+    },
+    {
+      "file": "training/data/authenticity/test/real/road_rdd_japan_028926.jpg",
+      "label": "excluded_road_photo_unlabelled",
+      "status": "ok",
+      "is_civic_scene": true,
+      "problems": [
+        "ROAD.POTHOLE"
+      ],
+      "scene": "A close-up view of a paved road surface with a white painted line, a pothole, and a white painted marking on the road.",
+      "quality": "blurry",
+      "latency_ms": 27725,
+      "warnings": []
+    },
+    {
+      "file": "training/data/authenticity/test/real/road_rdd_japan_030435.jpg",
+      "label": "excluded_road_photo_unlabelled",
+      "status": "ok",
+      "is_civic_scene": true,
+      "problems": [],
+      "scene": "A cracked and deteriorated asphalt road leads into a residential area with a two-story house on the left, surrounded by trees and some overgrown vegetation.",
+      "quality": "good",
+      "latency_ms": 30120,
+      "warnings": []
+    },
+    {
+      "file": "training/data/authenticity/test/real/road_rdd_japan_033014.jpg",
+      "label": "excluded_road_photo_unlabelled",
+      "status": "ok",
+      "is_civic_scene": true,
+      "problems": [],
+      "scene": "A view from a vehicle on a road with a green bridge in the distance, surrounded by green hills and trees under a clear blue sky.",
+      "quality": "good",
+      "latency_ms": 26796,
+      "warnings": []
+    },
+    {
+      "file": "training/data/authenticity/test/real/road_rupesh1_003307.jpg",
+      "label": "excluded_road_photo_unlabelled",
+      "status": "ok",
+      "is_civic_scene": true,
+      "problems": [
+        "ROAD.POTHOLE"
+      ],
+      "scene": "A close-up view of a damaged asphalt road with several potholes and cracks, a manhole cover in the upper right corner, and a drainage grate in the upper right corner.",
+      "quality": "good",
+      "latency_ms": 39943,
+      "warnings": []
+    },
+    {
+      "file": "training/data/authenticity/test/real/road_rupesh1_003724.jpg",
+      "label": "excluded_road_photo_unlabelled",
+      "status": "ok",
+      "is_civic_scene": true,
+      "problems": [
+        "ROAD.POTHOLE"
+      ],
+      "scene": "A black and white photo of a pothole in a road surface, with water in the depression and a concrete curb on the left.",
+      "quality": "good",
+      "latency_ms": 32994,
+      "warnings": []
+    }
+  ],
+  "n_excluded": 19,
+  "correction": "19 sampled 'negatives' were road photos (road_*) mixed into the authenticity 'real' folder; they are excluded from negative metrics (kept in rows as excluded_road_photo_unlabelled). Negatives = GenImage/ImageNet photos only."
+}
