@@ -84,6 +84,8 @@ class EvidenceSource(str, Enum):
     pothole_detector = "pothole_detector"
     road_damage_detector = "road_damage_detector"
     scene_classifier = "scene_classifier"
+    issue_classifier = "issue_classifier"
+    issue_detector = "issue_detector"
     text = "text"
     citizen_confirmed = "citizen_confirmed"
 

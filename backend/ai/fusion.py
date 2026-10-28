@@ -100,7 +100,8 @@ def classify(image: ImageAnalysis, text: TextAnalysis, fusion: Fusion,
                                                        Consistency.insufficient_image_evidence) else 0.9)
         combined[sid] = round(score, 3)
         src = [s for s in (EvidenceSource.image_vlm, EvidenceSource.pothole_detector,
-                           EvidenceSource.road_damage_detector, EvidenceSource.scene_classifier)
+                           EvidenceSource.road_damage_detector, EvidenceSource.scene_classifier,
+                           EvidenceSource.issue_classifier, EvidenceSource.issue_detector)
                if s in found_by.get(sid, ())]
         if t is not None:
             src.append(EvidenceSource.text)

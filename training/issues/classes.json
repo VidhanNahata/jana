@@ -1,0 +1,35 @@
+{
+  "_comment": "Single source of truth for the all-category issue models. Each class maps to a taxonomy subcategory (backend/ai/data/taxonomy.json). Change a mapping here, re-run export, and the backend follows. 'background' means: a normal street / nothing to report / not a civic photo.",
+  "classifier": {
+    "background": "background",
+    "classes": {
+      "pothole": "ROAD.POTHOLE",
+      "garbage": "WASTE.UNCOLLECTED",
+      "drain_sewage": "DRAIN.OVERFLOW",
+      "waterlogging": "STORMWATER.WATERLOGGING",
+      "streetlight": "LIGHT.POLE_DAMAGE",
+      "fallen_tree": "TREE.FALLEN",
+      "footpath_damage": "ROAD.FOOTPATH_DAMAGE",
+      "damaged_sign": "TRANSPORT.SIGN_DAMAGE"
+    },
+    "prompts": {
+      "pothole": "a photo of a pothole in a road",
+      "garbage": "a photo of a pile of garbage or litter on a street",
+      "drain_sewage": "a photo of a blocked or overflowing drain or sewage on a street",
+      "waterlogging": "a photo of a flooded road with standing water",
+      "streetlight": "a photo of a damaged or broken street light pole",
+      "fallen_tree": "a photo of a fallen tree or broken branch on a road",
+      "footpath_damage": "a photo of a broken or damaged footpath or sidewalk",
+      "damaged_sign": "a photo of a damaged or broken road sign",
+      "background": "a photo of an ordinary clean street with nothing wrong"
+    }
+  },
+  "detector": {
+    "_comment": "Box detector only for issues where position matters. 'pothole' is kept as a class so the model learns not to confuse it, but the backend lets the dedicated pothole detector own ROAD.POTHOLE.",
+    "classes": {
+      "pothole": "ROAD.POTHOLE",
+      "garbage": "WASTE.UNCOLLECTED",
+      "open_manhole": "DRAIN.OPEN_MANHOLE"
+    }
+  }
+}

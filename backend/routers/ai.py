@@ -17,6 +17,7 @@ from backend.models.user import User
 from backend.routers.auth import get_current_user
 from backend.routers.complaints import parse_dashcam
 from backend.services.priority import assess_priority
+from backend.services import issue_models
 
 router = APIRouter()
 
@@ -108,5 +109,6 @@ def get_status():
     return {
         "offline_mode": settings.AI_STRICT_OFFLINE,
         "vlm": vision.metadata(),
+        "issue_models": issue_models.status(),
         "knowledge_versions": knowledge.versions(),
     }

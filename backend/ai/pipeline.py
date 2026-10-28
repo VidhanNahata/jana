@@ -1,7 +1,7 @@
 """
 Civic complaint AI pipeline (orchestration).
 
-  1 image understanding    vision.analyze_images (local VLM) + pothole detector evidence
+  1 image understanding    vision.analyze_images (local VLM) + pothole detector + issue classifier/detector evidence
   2 text understanding     text_analysis.analyze_text (+ local translation for Kannada)
   3 consistency            fusion.assess_consistency
   4 classification         fusion.classify (versioned taxonomy)
@@ -79,6 +79,12 @@ def _detector(images: list[bytes]) -> list[dict | None]:
     return out
 
 
+def _issue_models(images: list[bytes]) -> list[dict]:
+    """Trained all-category classifier / detector (skipped silently when not installed)."""
+    from backend.services import issue_models
+    return issue_models.evidence(images)
+
+
 def analyze(images: list[bytes], text: str, citizen: CitizenLocation | None = None, draft_language: str = "en",
             confirmed_subcategory: str | None = None, live_flags: list[bool] | None = None,
             image_refs: list[str] | None = None, run_vlm: bool = True, run_detectors: bool = True,
@@ -114,7 +120,11 @@ def analyze(images: list[bytes], text: str, citizen: CitizenLocation | None = No
     else:
         authenticity = timed("authenticity", _authenticity, images, live_flags) if run_detectors else None
         detections = timed("detectors", _detector, images) if images and run_detectors else []
-        image = timed("image_understanding", vision.analyze_images, images, detections, use_vlm=run_vlm)
+        # Cheap ONNX models: run even when the heavy detectors are deferred to background tasks,
+        # so a submission made without the review step still gets image evidence.
+        issue_ev = timed("issue_models", _issue_models, images) if images else []
+        image = timed("image_understanding", vision.analyze_images, images, detections, use_vlm=run_vlm,
+                      issue_evidence=issue_ev)
 
         translation = None
         lang = detect_language(normalize(text or ""))
