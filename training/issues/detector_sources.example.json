@@ -1,0 +1,12 @@
+{
+  "_comment": "Copy to detector_sources.json and edit. Each source is a YOLO-format export (Roboflow: Export Dataset -> YOLOv8/YOLO11) unpacked under training/data/raw_det/. class_map maps THAT dataset's class names to ours (garbage, open_manhole, pothole); classes not listed are dropped. Check each dataset's licence before using it commercially.",
+  "sources": [
+    {"name": "example_trash", "path": "training/data/raw_det/example_trash",
+     "class_map": {"trash": "garbage", "garbage": "garbage", "litter": "garbage"}},
+    {"name": "example_manhole", "path": "training/data/raw_det/example_manhole",
+     "class_map": {"open manhole": "open_manhole", "manhole": "open_manhole"}},
+    {"name": "example_pothole", "path": "training/data/raw_det/example_pothole",
+     "class_map": {"pothole": "pothole", "D40": "pothole"}}
+  ],
+  "negative_ratio": 0.15
+}

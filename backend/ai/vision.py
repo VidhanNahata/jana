@@ -219,8 +219,11 @@ def road_damage_problems(road: dict | None) -> list[VisualProblem]:
 
 
 def analyze_images(images: list[bytes], detector_results: list[dict | None] | None = None,
-                   use_vlm: bool = True) -> ImageAnalysis:
-    """Analyze the first image with the VLM (plus pothole-detector evidence for all images).
+                   use_vlm: bool = True, issue_evidence: list[dict] | None = None) -> ImageAnalysis:
+    """Analyze the first image with the VLM (plus specialist-model evidence for all images).
+
+    issue_evidence comes from services.issue_models.evidence(): the trained all-category
+    classifier / detector. It is reported even when the VLM is off or unavailable.
 
     use_vlm=False skips the language model (e.g. a cheap re-check at submission)
     but still reports the specialist detector's evidence."""
@@ -238,6 +241,11 @@ def analyze_images(images: list[bytes], detector_results: list[dict | None] | No
                      f"{detector['max_confidence']:.2f}"))
     det_problems += road_damage_problems((detector or {}).get("road_damage"))
 
+    for ev in issue_evidence or []:
+        det_problems.append(VisualProblem(
+            subcategory_id=ev["subcategory_id"], source=EvidenceSource(ev["source"]),
+            confidence=min(max(float(ev["confidence"]), 0.0), 1.0), evidence=str(ev.get("evidence", ""))[:300]))
+
     try:
         img = open_image(images[0])
     except ValueError as exc:
@@ -250,7 +258,7 @@ def analyze_images(images: list[bytes], detector_results: list[dict | None] | No
     except ModelUnavailable as exc:
         return ImageAnalysis(status=StageStatus.model_unavailable, images_analyzed=0, detector=detector,
                              problems=det_problems, error=str(exc),
-                             warnings=["Image understanding unavailable; only the road detectors ran."])
+                             warnings=["Image understanding unavailable; only the trained detectors/classifiers ran."])
 
     messages = [{"role": "user", "content": [{"type": "image", "image": img}, {"type": "text", "text": _prompt()}]}]
     data, last_err, raw = None, None, ""

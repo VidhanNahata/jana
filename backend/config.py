@@ -13,6 +13,16 @@ class Settings(BaseSettings):
     # Dashcam road-damage model (pothole / cracks / faded markings); optional
     ROAD_DAMAGE_MODEL_PATH: str = "backend/ml_models/road_damage.onnx"
     ROAD_DAMAGE_CONFIG_PATH: str = "backend/ml_models/road_damage.json"
+    # All-category issue models (garbage, drains, waterlogging, streetlights, trees, footpaths, signs...).
+    # Optional: when the .onnx + .json files are absent they are skipped. See training/issues/README.md.
+    ISSUE_MODELS_ENABLED: bool = True
+    ISSUE_CLASSIFIER_PATH: str = "backend/ml_models/issue_classifier.onnx"
+    ISSUE_DETECTOR_PATH: str = "backend/ml_models/issue_detector.onnx"
+    # CLIP option: pretrained encoder (python scripts/install_clip.py) + a small trained head
+    # (training/issues/train_clip_head.py --install). Both must exist; otherwise it is skipped.
+    ISSUE_CLIP_MODEL_PATH: str = "models/clip-vit-base-patch32"
+    ISSUE_CLIP_HEAD_PATH: str = "backend/ml_models/issue_clip_head.npz"
+    ISSUE_MODEL_MAX_CONFIDENCE: float = 0.85   # a single model alone never claims more than this
     AUTHENTICITY_MODEL_PATH: str = "backend/ml_models/authenticity.onnx"
     AUTHENTICITY_THRESHOLD: float = 0.761  # from training/runs/authenticity/eval_report.json (<=3% false flags on real val photos)
     # ── Civic AI pipeline (backend/ai) ──────────────────────────────────
