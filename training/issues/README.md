@@ -15,6 +15,16 @@ and trains in seconds. The EfficientNet fine-tune (section 3) needs several hund
 Potholes are still decided by the dedicated `pothole.onnx` detector; the new models never
 override it. If neither new model is installed the app behaves exactly as before.
 
+> **Relation to `backend/services/civic_scene.py`.** The repo already ships a *zero-shot* CLIP scene
+> classifier (fallen tree, garbage, flooding, debris, open manhole; prompts in `training/clip_scene_prompts.py`,
+> measured by `training/eval_civic_detector.py`). It needs no photos. The models in this folder are
+> *trained on your photos* and add the categories it lacks (drains/sewage, streetlight poles, footpath damage,
+> damaged signs) and a "normal street" class. Both feed the same pipeline as separate evidence sources
+> (`scene_classifier` vs `issue_classifier`); fusion keeps the strongest score per subcategory, so running both
+> does not double-count. Garbage maps to `WASTE.DUMPING` in the scene classifier and `WASTE.UNCOLLECTED` here:
+> edit `classes.json` if you want them aligned. Train your head, compare its test numbers with
+> `eval_civic_detector.py` on the same photos, and keep whichever is better per category.
+
 Class names and their taxonomy mapping live in one file: `classes.json`.
 
 ## 1. Get data (the part that decides quality)
